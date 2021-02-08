@@ -56,16 +56,19 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="EcolePoleDance.DB" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="EcolePoleDance.DB\Cours.sql" />
-    <Build Include="EcolePoleDance.DB\Prof.sql" />
-    <Build Include="EcolePoleDance.DB\Client.sql" />
-    <Build Include="EcolePoleDance.DB\Session.sql" />
-    <Build Include="EcolePoleDance.DB\Ecole.sql" />
-    <Build Include="EcolePoleDance.DB\Abonnement.sql" />
-    <Build Include="EcolePoleDance.DB\Client_Abonnement.sql" />
-    <Build Include="EcolePoleDance.DB\Participation.sql" />
+    <Build Include="dbo\Tables\Abonnement.sql" />
+    <Build Include="dbo\Tables\Client.sql" />
+    <Build Include="dbo\Tables\Client_Abonnement.sql" />
+    <Build Include="dbo\Tables\Cours.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Ecole.sql" />
+    <Build Include="dbo\Tables\Participation.sql" />
+    <Build Include="dbo\Tables\Prof.sql" />
+    <Build Include="dbo\Tables\Session.sql" />
   </ItemGroup>
 </Project>
