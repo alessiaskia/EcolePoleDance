@@ -64,8 +64,6 @@
     <Build Include="dbo\Tables\Client.sql" />
     <Build Include="dbo\Tables\Client_Abonnement.sql" />
     <Build Include="dbo\Tables\Cours.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <Build Include="dbo\Tables\Ecole.sql" />
     <Build Include="dbo\Tables\Participation.sql" />
     <Build Include="dbo\Tables\Prof.sql" />
