@@ -241,6 +241,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Cours.cshtml" />
+    <Content Include="Views\Home\Equipe.cshtml" />
+    <Content Include="Views\Home\Inscription.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
