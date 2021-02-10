@@ -6,38 +6,25 @@
     <meta name="format-detection" content="telephone=no" />
     <link rel="icon" href="images/favicon.ico">
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <link rel="stylesheet" href="css/touchTouch.css">
-    <link rel="stylesheet" href="css/camera.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="~/js/jquery.js"></script>
-    <script src="~/js/jquery-migrate-1.1.1.js"></script>
-    <script src="~/js/jquery.easing.1.3.js"></script>
-    <script src="~/js/script.js"></script>
-    <script src="~/js/superfish.js"></script>
-    <script src="~/js/jquery.equalheights.js"></script>
-    <script src="~/js/jquery.mobilemenu.js"></script>
-    <script src="~/js/tmStickUp.js"></script>
-    <script src="~/js/jquery.ui.totop.js"></script>
-    <script src="~/js/touchTouch.jquery.js"></script>
-    <script src="~/js/camera.js"></script>
-    <!--[if (gt IE 9)|!(IE)]><!-->
-    <script src="~/js/jquery.mobile.customized.min.js"></script>
-    <!--<![endif]-->
+    @Styles.Render("~/Content/index")
+    @Scripts.Render("~/bundles/base")
+    @Scripts.Render("~/bundles/additionalForIndex")
+
     <script>
- $(window).load(function(){
-  $().UItoTop({ easingType: 'easeOutQuart' });
-  $('#camera_wrap').camera({
-    loader: false,
-    pagination: false ,
-    minHeight: '400',
-    thumbnails: true,
-    height: '46.32478632478632%',
-    caption: false,
-    navigation: false,
-    fx: 'mosaic'
-  });
-  $('.gallery .gall_item').touchTouch();
- });
+        $(window).load(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+            $('#camera_wrap').camera({
+                loader: false,
+                pagination: false,
+                minHeight: '400',
+                thumbnails: true,
+                height: '46.32478632478632%',
+                caption: false,
+                navigation: false,
+                fx: 'mosaic'
+            });
+            $('.gallery .gall_item').touchTouch();
+        });
     </script>
     <!--[if lt IE 8]>
      <div style=' clear: both; text-align:center; position: relative;'>
@@ -52,6 +39,7 @@
     <![endif]-->
 </head>
 <body class="page1" id="top">
+
     <!--==============================
                   header
     =================================-->
@@ -61,7 +49,7 @@
                 <div class="grid_12">
                     <h1 class="logo">
                         <a href="index.html">
-                            POLE IS ART<span>votre école de pole dance au coeur de Bruxelles</span>
+                            POLE IS ART<span>Votre école de pole dance</span>
                         </a>
                     </h1>
                 </div>
@@ -234,5 +222,6 @@
         </div>
     </footer>
     <a href="#" id="toTop" class="fa fa-angle-up"></a>
+    @RenderBody()
 </body>
 </html>
