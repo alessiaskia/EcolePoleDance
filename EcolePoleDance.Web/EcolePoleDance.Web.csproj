@@ -127,6 +127,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bat\libmail.php" />
+    <Content Include="bat\MailHandler.php" />
+    <Content Include="bat\recaptchalib.php" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -207,6 +210,13 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="less\contact-form.less" />
+    <Content Include="less\countdown.less" />
+    <Content Include="less\mixins.less" />
+    <Content Include="less\stuck.less" />
+    <Content Include="less\style.less" />
+    <Content Include="less\superfish.less" />
+    <Content Include="less\variables.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -230,6 +240,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Cours.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,13 +4,12 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:700);
 @import url(//fonts.googleapis.com/css?family=Open+Sans:300);
 @import url(//fonts.googleapis.com/css?family=Open+Sans:300italic);
-@import url(//fonts.googleapis.com/css?family=Economica);
+
 .navigation {
-	z-index:999;
-	position:relative;
-	padding:0;
-	font-family:Economica,sans-serif;
-	font-weight:400
+	z-index: 999;
+	position: relative;
+	padding: 0;
+	font-weight: 400
 }
 .navigation .sf-menu {
 	z-index:990;
@@ -121,10 +120,9 @@ input,textarea {
 img {
 	max-width:100%
 }
-h1,h2,h3,h4,h5,h6 {
-	font-weight:400;
-	color:#b878b5;
-	font-family:Economica,sans-serif
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	color: #b878b5;
 }
 h2 {
 	font-size:60px;
@@ -186,7 +184,7 @@ a:hover {
 	color:#7e4a7c
 }
 .link-1 {
-	font:24px/32px Economica,sans-serif;
+	font:24px/32px;
 	color:#7e4a7c;
 	display:inline-block;
 	margin-top:24px
@@ -351,7 +349,7 @@ h1 span {
 .bq-1 .ta__right {
 	padding-top:38px;
 	color:#80637f;
-	font:24px/30px Economica,sans-serif
+	font:24px/30px 
 }
 .block-2 {
 	overflow:hidden;

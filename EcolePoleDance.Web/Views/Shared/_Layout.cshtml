@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/base")
-    @Scripts.Render("~/bundles/additionalForIndex")
+   
 
     <script>
         $(window).load(function () {
@@ -64,11 +64,11 @@
                         <div class="navigation ">
                             <nav>
                                 <ul class="sf-menu">
-                                    <li class="current"><a href="index.html">Home</a></li>
-                                    <li><a href="cours.html">Cours</a></li>
-                                    <li><a href="equipe.html">Equipe</a></li>
-                                    <li><a href="tarifs.html">Tarifs</a></li>
-                                    <li><a href="contacts.html">Zone Membre</a></li>
+                                    <li class="current"><a class="@ViewBag.Home" href="/Home/Index">Home</a></li>
+                                    <li><a class="@ViewBag.Cours" href="/Home/Cours">Cours</a></li>
+                                    <li><a class="@ViewBag.Equipe" href="/Home/Equipe">Equipe</a></li>
+                                    <li><a class="@ViewBag.Tarifs" href="/Home/Tarifs">Tarifs</a></li>
+                                    <li><a class="@ViewBag.Inscription" href="/Home/Inscription">Inscription</a></li>
                                 </ul>
                             </nav>
                             <div class="clear"></div>
@@ -87,12 +87,12 @@
                 </div>
                 <div class="grid_4">
                     <address class="address-1">
-                        <div class="fa fa-home"></div>28 Jackson Blvd Ste 1020 Chicago,  <br>
-                        IL 60604-2340
+                        <div class="fa fa-home"></div>Rue du T-Rex, 39 <br>
+                        1040 Bruxelles
                     </address>
                 </div>
                 <div class="grid_3">
-                    <a href="#" class="mail-1"><span class="fa fa-envelope"></span>info@demolink.org</a>
+                    <a href="#" class="mail-1"><span class="fa fa-envelope"></span>polisart@gmail.org</a>
                 </div>
                 <div class="grid_4 fright">
                     <div class="socials">
@@ -118,5 +118,10 @@
     </footer>
     <a href="#" id="toTop" class="fa fa-angle-up"></a>
     
+    @RenderSection("ContactCSS", false)
+    @RenderSection("IndexCSS", false)
+    @RenderSection("IndexScript", false)
+    @RenderSection("ContactScript", false)
+
 </body>
 </html>
