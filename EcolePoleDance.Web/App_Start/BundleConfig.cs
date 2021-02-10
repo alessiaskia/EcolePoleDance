@@ -20,17 +20,16 @@ namespace EcolePoleDance.Web
 
             //STYLE BUNDLES 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/style.css"));
+                "~/css/style.css"));
 
             bundles.Add(new StyleBundle("~/Content/contact").Include(
-                "~/Content/contact-form.css",
-                "~/Content/style.css"
-                ));
+                "~/css/contact-form.css"
+                               ));
 
             bundles.Add(new StyleBundle("~/Content/index").Include(
-               "~/Content/touchTouch.css",
-               "~/Content/camera.css",
-               "~/Content/style.css"
+               "~/css/touchTouch.css",
+               "~/css/camera.css"
+
                ));
 
             //SCRIPT BUNDLES
@@ -38,26 +37,26 @@ namespace EcolePoleDance.Web
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/base").Include(
-                        "~/Scripts/jquery.js",
-                         "~/Scripts/jquery-migrate-1.1.1.js",
-                         "~/Scripts/jquery.easing.1.3.js",
-                         "~/Scripts/script.js",
-                         "~/Scripts/superfish.js",
-                         "~/Scripts/jquery.equalheights.js",
-                         "~/Scripts/jquery.mobilemenu.js",
-                         "~/Scripts/tmStickUp.js",
-                         "~/Scripts/jquery.ui.totop.js"
+                        "~/js/jquery.js",
+                         "~/js/jquery-migrate-1.1.1.js",
+                         "~/js/jquery.easing.1.3.js",
+                         "~/js/script.js",
+                         "~/js/superfish.js",
+                         "~/js/jquery.equalheights.js",
+                         "~/js/jquery.mobilemenu.js",
+                         "~/js/tmStickUp.js",
+                         "~/js/jquery.ui.totop.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/additionalForIndex").Include(
-                         "~/Scripts/touchTouch.jquery.js",
-                         "~/Scripts/camera.js",
-                         "~/Scripts/jquery.mobile.customized.min.js"
+                         "~/js/touchTouch.jquery.js",
+                         "~/js/camera.js",
+                         "~/js/jquery.mobile.customized.min.js"
                 ));
-           
+
             bundles.Add(new ScriptBundle("~/bundles/additionalForContacts").Include(
-                         "~/Scripts/tTMForm.js",
-                         "~/Scripts/modal.js"
+                         "~/js/tTMForm.js",
+                         "~/js/modal.js"
                 ));
 
         }

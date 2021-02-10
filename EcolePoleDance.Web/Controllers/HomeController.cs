@@ -14,17 +14,18 @@ namespace EcolePoleDance.Web.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Cours()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Equipe()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        public ActionResult Tarifs()
+        {
             return View();
         }
     }
