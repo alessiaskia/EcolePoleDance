@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcolePoleDance.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -24,7 +25,8 @@ namespace EcolePoleDance.Web.Controllers
         public ActionResult Equipe()
         {
             ViewBag.Equipe = "active";
-            return View();
+            EquipeViewModel em = new EquipeViewModel();
+            return View(em);
         }
 
         public ActionResult Tarifs()

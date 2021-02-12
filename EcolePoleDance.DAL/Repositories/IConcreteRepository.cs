@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetFlask.DAL.Repositories
+namespace EcolePoleDance.DAL.Repositories
 {
     public interface IConcreteRepository<T>
     {

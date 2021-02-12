@@ -42,7 +42,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="ProfRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EcolePoleDance.DAL\EcolePoleDance.DAL.csproj">
+      <Project>{f8a089ca-a55a-487a-ae87-4ac652c7b944}</Project>
+      <Name>EcolePoleDance.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EcolePoleDance.Entities\EcolePoleDance.Entities.csproj">
+      <Project>{516536d5-ee64-4a51-9788-339bd457c268}</Project>
+      <Name>EcolePoleDance.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EcolePoleDance.Models\EcolePoleDance.Models.csproj">
+      <Project>{fa429ba1-517e-48bf-9d26-3c4ddbc6c52f}</Project>
+      <Name>EcolePoleDance.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
