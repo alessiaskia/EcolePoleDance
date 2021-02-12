@@ -13,16 +13,16 @@
           Content
 ======================-->
 <section id="content" class="inset__1">
-    <h2>NOTRE EQUIPE</h2>
     <div class="ic">More Website Templates at TemplateMonster.com - October 06, 2014!</div>
     <div class="container_12">
+    <h2>NOTRE EQUIPE</h2>
         @for (int i = 0; i < Model.Equipe.Count; i++)
         {
             if (i % 2 != 0)
             {
                 <div class="grid_6">
                     <div class="block-2">
-                        <img src="/@Model.Equipe[i].Photo" alt="photo-prof">
+                        <img src="/images/@Model.Equipe[i].Photo" alt="photo-prof">
                         <div class="extra_wrapper">
                             <h4 class="color1">@Model.Equipe[i].Prenom</h4>
                             <p class="color1">@Model.Equipe[i].InfoProf</p>
@@ -36,7 +36,7 @@
             {
                 <div class="grid_6">
                     <div class="block-2">
-                        <img src="/@Model.Equipe[i].Photo" alt="photo-prof">
+                        <img src="/images/@Model.Equipe[i].Photo" alt="photo-prof">
                         <div class="extra_wrapper">
                             <h4 class="color1">@Model.Equipe[i].Prenom</h4>
                             <p class="color1">@Model.Equipe[i].InfoProf</p>
