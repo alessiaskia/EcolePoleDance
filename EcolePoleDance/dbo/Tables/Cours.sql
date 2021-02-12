@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[Cours]
 (
 	[IdCours] INT NOT NULL IDENTITY,
-	[NomCours] VARCHAR(32) NOT NULL,
+	[NomCours] NVARCHAR(50) NOT NULL,
 	[MaxParticipants] INT NOT NULL,
-	[Description] VARCHAR(MAX) NOT NULL,
-	[Image] VARCHAR(512) NOT NULL,
+	[Description] NVARCHAR(MAX) NOT NULL,
+	[Image] NVARCHAR(512) NOT NULL,
 	[Duree] INT NOT NULL,
 	[IdProf] INT NOT NULL,
 

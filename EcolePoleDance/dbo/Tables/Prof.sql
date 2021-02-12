@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[Prof]
 (
 	[IdProf] INT NOT NULL IDENTITY,
-	[Prenom] VARCHAR(64) NOT NULL,
-	[InfoProf] VARCHAR(MAX) NOT NULL,
-	[Photo] VARCHAR(250) NOT NULL, 
+	[Prenom] NVARCHAR(64) NOT NULL,
+	[InfoProf] NVARCHAR(MAX) NOT NULL,
+	[Photo] NVARCHAR(250) NOT NULL, 
 
     CONSTRAINT PK_Prof PRIMARY KEY ([IdProf])
 )

@@ -11,6 +11,7 @@ namespace EcolePoleDance.Models
         #region Fields
         private int _idProf;
         private string _prenom, _infoProf, _photo;
+  
        
         #endregion
 
@@ -66,6 +67,7 @@ namespace EcolePoleDance.Models
                 _photo = value;
             }
         }
+
         #endregion
     }
 }
