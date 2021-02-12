@@ -124,6 +124,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EquipeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -155,15 +156,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="images\arrowws.png" />
     <Content Include="images\big1.jpg" />
-    <Content Include="images\butterfly.jpg" />
     <Content Include="images\cerceau.jpg" />
-    <Content Include="images\deadlift-black.jpg" />
     <Content Include="images\deadlift-dress.jpg" />
     <Content Include="images\etirements.jpg" />
-    <Content Include="images\figurehead.jpg" />
+    <Content Include="images\figure.jpg" />
     <Content Include="images\form-loader.gif" />
     <Content Include="images\genie.jpg" />
-    <Content Include="images\handstand.jpg" />
     <Content Include="images\page1_img1.jpg" />
     <Content Include="images\page1_img2.jpg" />
     <Content Include="images\page2_img1.jpg" />
@@ -173,10 +171,7 @@
     <Content Include="images\page4_img3.jpg" />
     <Content Include="images\page4_img4.jpg" />
     <Content Include="images\page4_img5.jpg" />
-    <Content Include="images\pole-grey.jpg" />
-    <Content Include="images\pole-tricks.jpg" />
     <Content Include="images\preloader.gif" />
-    <Content Include="images\sit.jpg" />
     <Content Include="images\slide-1.jpg" />
     <Content Include="images\slide-2.jpg" />
     <Content Include="images\slide-3.jpg" />
@@ -246,7 +241,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

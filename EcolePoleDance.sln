@@ -6,6 +6,25 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EcolePoleDance", "EcolePoleDance\EcolePoleDance.sqlproj", "{F1EAF046-24A3-425B-B8B5-6A1AD8A26F77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcolePoleDance.Web", "EcolePoleDance.Web\EcolePoleDance.Web.csproj", "{A473188C-E5AC-4854-9F01-ABF67BED045F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FA429BA1-517E-48BF-9D26-3C4DDBC6C52F} = {FA429BA1-517E-48BF-9D26-3C4DDBC6C52F}
+		{59A225C3-C516-4EAC-8C3B-93356C643246} = {59A225C3-C516-4EAC-8C3B-93356C643246}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcolePoleDance.DAL", "EcolePoleDance.DAL\EcolePoleDance.DAL.csproj", "{F8A089CA-A55A-487A-AE87-4AC652C7B944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcolePoleDance.Entities", "EcolePoleDance.Entities\EcolePoleDance.Entities.csproj", "{516536D5-EE64-4A51-9788-339BD457C268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcolePoleDance.Mappers", "EcolePoleDance.Mappers\EcolePoleDance.Mappers.csproj", "{9429BA35-883E-45F5-9AD9-D5128D39676A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcolePoleDance.Models", "EcolePoleDance.Models\EcolePoleDance.Models.csproj", "{FA429BA1-517E-48BF-9D26-3C4DDBC6C52F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcolePoleDance.Repositories", "EcolePoleDance.Repositories\EcolePoleDance.Repositories.csproj", "{59A225C3-C516-4EAC-8C3B-93356C643246}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FA429BA1-517E-48BF-9D26-3C4DDBC6C52F} = {FA429BA1-517E-48BF-9D26-3C4DDBC6C52F}
+		{F8A089CA-A55A-487A-AE87-4AC652C7B944} = {F8A089CA-A55A-487A-AE87-4AC652C7B944}
+		{516536D5-EE64-4A51-9788-339BD457C268} = {516536D5-EE64-4A51-9788-339BD457C268}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +42,26 @@ Global
 		{A473188C-E5AC-4854-9F01-ABF67BED045F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A473188C-E5AC-4854-9F01-ABF67BED045F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A473188C-E5AC-4854-9F01-ABF67BED045F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8A089CA-A55A-487A-AE87-4AC652C7B944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A089CA-A55A-487A-AE87-4AC652C7B944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A089CA-A55A-487A-AE87-4AC652C7B944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A089CA-A55A-487A-AE87-4AC652C7B944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{516536D5-EE64-4A51-9788-339BD457C268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{516536D5-EE64-4A51-9788-339BD457C268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{516536D5-EE64-4A51-9788-339BD457C268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{516536D5-EE64-4A51-9788-339BD457C268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9429BA35-883E-45F5-9AD9-D5128D39676A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9429BA35-883E-45F5-9AD9-D5128D39676A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9429BA35-883E-45F5-9AD9-D5128D39676A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9429BA35-883E-45F5-9AD9-D5128D39676A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA429BA1-517E-48BF-9D26-3C4DDBC6C52F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA429BA1-517E-48BF-9D26-3C4DDBC6C52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA429BA1-517E-48BF-9D26-3C4DDBC6C52F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA429BA1-517E-48BF-9D26-3C4DDBC6C52F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A225C3-C516-4EAC-8C3B-93356C643246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A225C3-C516-4EAC-8C3B-93356C643246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A225C3-C516-4EAC-8C3B-93356C643246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A225C3-C516-4EAC-8C3B-93356C643246}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
