@@ -117,8 +117,20 @@ input,textarea {
 	outline:0!important;
 	-webkit-appearance:none
 }
+.cours-photo {
+	max-width: 300px;
+	max-height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	display:block;
+}
+
+.description-home {
+	margin-top: 10%;
+}
 img {
-	max-width:100%
+	max-width: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
@@ -134,7 +146,8 @@ h2.inset__1 {
 }
 h3 {
 	font-size:48px;
-	line-height:42px
+	line-height:42px;
+	margin-top: 46px
 }
 h3.offset__1 {
 	margin-bottom:31px

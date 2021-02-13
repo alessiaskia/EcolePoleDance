@@ -12,32 +12,33 @@ namespace EcolePoleDance.Web.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Home = "active";
+            ViewBag.Home = "current";
             return View();
         }
 
         public ActionResult Cours()
         {
-            ViewBag.Cours = "active";
-            return View();
+            ViewBag.Cours = "current";
+            CoursViewModel cm = new CoursViewModel();
+            return View(cm);
         }
 
         public ActionResult Equipe()
         {
-            ViewBag.Equipe = "active";
+            ViewBag.Equipe = "current";
             EquipeViewModel em = new EquipeViewModel();
             return View(em);
         }
 
         public ActionResult Tarifs()
         {
-            ViewBag.Tarifs = "active";
+            ViewBag.Tarifs = "current";
             return View();
         }
 
         public ActionResult Inscription()
         {
-            ViewBag.Inscription = "active";
+            ViewBag.Inscription = "current";
             return View();
         }
     }

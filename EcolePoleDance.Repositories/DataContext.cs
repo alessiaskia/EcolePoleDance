@@ -12,11 +12,12 @@ namespace EcolePoleDance.Repositories
     public class DataContext
     {
         IConcreteRepository<ProfEntity> _profRepo;
-        //IConcreteRepository<CoursEntity> _coursRepo;
+        IConcreteRepository<CoursEntity> _coursRepo;
 
         public DataContext(string connectionString)
         {
             _profRepo = new ProfRepository(connectionString);
+            _coursRepo = new CoursRepository(connectionString);
         }
 
         #region Professeurs
@@ -43,6 +44,23 @@ namespace EcolePoleDance.Repositories
                 ).ToList();
         }
 
+        #endregion
+
+        #region Cours
+        public List<CoursModel> GetAllCours()
+        {
+            return _coursRepo.Get()
+                .Select(c =>
+                new CoursModel()
+                {
+                NomCours = c.NomCours,
+                MaxParticipants = c.MaxParticipants,
+                Description = c.Description,
+                Image = c.Image,
+                Duree = new TimeSpan(c.Duree)
+                }
+                ).ToList();
+        } 
         #endregion
     }
 }
