@@ -8,38 +8,38 @@ using System.Threading.Tasks;
 
 namespace EcolePoleDance.Repositories
 {
-    public class CoursRepository : BaseRepository<CoursEntity>, IConcreteRepository<CoursEntity>
+    public class AbonnementRepository : BaseRepository<AbonnementEntity>, IConcreteRepository<AbonnementEntity>
     {
-        public CoursRepository(string connectionString) : base(connectionString)
+        public AbonnementRepository(string connectionString) : base(connectionString)
         {
 
         }
-        public bool Delete(CoursEntity toDelete)
+
+        public bool Delete(AbonnementEntity toDelete)
         {
             throw new NotImplementedException();
         }
 
-        public List<CoursEntity> Get()
+        public List<AbonnementEntity> Get()
         {
-            string requete = "Select * from Cours";
+            string requete = "Select * from Abonnement";
 
             return base.Get(requete);
         }
 
-        public CoursEntity GetOne(int PK)
+        public AbonnementEntity GetOne(int PK)
         {
-
-            string requete = "Select * from Cours where IdCours =@id";
+            string requete = "Select * from Abonnement where IdAbonnement =@id";
 
             return base.GetOne(PK, requete);
         }
 
-        public bool Insert(CoursEntity toInsert)
+        public bool Insert(AbonnementEntity toInsert)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(CoursEntity toUpdate)
+        public bool Update(AbonnementEntity toUpdate)
         {
             throw new NotImplementedException();
         }

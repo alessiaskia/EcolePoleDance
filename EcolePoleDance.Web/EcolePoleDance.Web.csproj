@@ -126,6 +126,7 @@
     </Compile>
     <Compile Include="Models\CoursViewModel.cs" />
     <Compile Include="Models\EquipeViewModel.cs" />
+    <Compile Include="Models\InscriptionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,11 +13,13 @@ namespace EcolePoleDance.Repositories
     {
         IConcreteRepository<ProfEntity> _profRepo;
         IConcreteRepository<CoursEntity> _coursRepo;
+        IConcreteRepository<AbonnementEntity> _abonnementRepo;
 
         public DataContext(string connectionString)
         {
             _profRepo = new ProfRepository(connectionString);
             _coursRepo = new CoursRepository(connectionString);
+            _abonnementRepo = new AbonnementRepository(connectionString);
         }
 
         #region Professeurs
@@ -57,10 +59,24 @@ namespace EcolePoleDance.Repositories
                 MaxParticipants = c.MaxParticipants,
                 Description = c.Description,
                 Image = c.Image,
-                Duree = new TimeSpan(c.Duree)
                 }
                 ).ToList();
-        } 
+        }
+        #endregion
+
+        #region Abonnements
+        public List<AbonnementModel> GetAllAbonnements()
+        {
+            return _abonnementRepo.Get()
+                .Select(a =>
+                new AbonnementModel()
+                {
+                    NombreCredits = a.NombreCredits,
+                    Montant = a.Montant,
+                    PrixParCours = a.PrixParCours,
+                }
+                ).ToList();
+        }
         #endregion
     }
 }

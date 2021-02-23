@@ -2,6 +2,7 @@
 (
 	[IdSession] INT NOT NULL IDENTITY,
 	[Horaire] DATETIME2 NOT NULL,
+	[Duree] TIME NOT NULL,
 	[Annule] BIT NOT NULL,
 	[IdEcole] INT NOT NULL,
 	[IdProf] INT NOT NULL,

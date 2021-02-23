@@ -9,7 +9,7 @@ namespace EcolePoleDance.Entities
     public class CoursEntity
     {
         #region Fields
-        private int _idCours, _maxParticipants, _duree;
+        private int _idCours, _maxParticipants;
         private string _nomCours, _description, _image;
         #endregion
 
@@ -37,19 +37,6 @@ namespace EcolePoleDance.Entities
             set
             {
                 _maxParticipants = value;
-            }
-        }
-
-        public int Duree
-        {
-            get
-            {
-                return _duree;
-            }
-
-            set
-            {
-                _duree = value;
             }
         }
 

@@ -5,7 +5,6 @@
 	[MaxParticipants] INT NOT NULL,
 	[Description] NVARCHAR(MAX) NOT NULL,
 	[Image] NVARCHAR(512) NOT NULL,
-	[Duree] INT NOT NULL,
 	[IdProf] INT NOT NULL,
 
 	CONSTRAINT PK_Cours PRIMARY KEY ([IdCours]),

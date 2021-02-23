@@ -1,6 +1,16 @@
-﻿
+﻿@model EcolePoleDance.Web.Models.InscriptionViewModel
 @{
     ViewBag.Title = "Inscription";
+}
+
+@section ContactCSS
+    {
+    @Styles.Render("~/Content/contact")
+}
+
+@section ContactScript
+{
+    @Scripts.Render("~/bundles/additionalForContacts")
 }
 
 <script>
@@ -15,54 +25,61 @@
 <section id="content">
     <div class="ic">More Website Templates at TemplateMonster.com - October 06, 2014!</div>
     <div class="container_12">
-        
+
         <div class="grid_5">
-            <h4 class="color1 inset__1">Comment devenir membre de Pole Is Art ?</h4>
-            <ul>
-                <li>Remplissez le formulaire avec vos coordonnées </li>
-                <li>Ensuite, choisissez l'abonnement que vous voulez souscrire et envoyez.</li>
-                <li>Payez l'école par virement bancaire. Voici les coordonnées :</li>
-            </ul>
+            <h4 class="color1 inset__1">Devenez membre de Pole Is Art</h4>
+
+            <p class="instruction">Remplissez <span class="highlight">le formulaire</span> avec vos coordonnées </p>
+            <p class="instruction">Ensuite, <span class="highlight">choisissez l'abonnement</span> que vous voulez souscrire et envoyez.</p>
+            <p class="instruction"><span class="highlight">Payez par virement bancaire</span>. Voici les coordonnées :</p>
+
 
             Pole Is Art <br>
             Rue du T-Rex, 39 <br>
             1040 Bruxelles <br>
             IBAN: BE22 4444 5555 6666 <br>
 
-            <p>Les administrateur de l'école valideront votre inscription dès que le montant de l'abonnement sera reglé. <br />
-            Vous recevrez une email de confirmation
-            </p>
         </div>
-        @*<div class="grid_6 prefix_1">
+        <div class="grid_6 prefix_1">
             <h4 class="color1 inset__1"></h4>
-            <form id="contact-form">
+            <p class="instruction">
+                Les administrateur de l'école valideront votre inscription dès que le montant de l'abonnement sera reglé.
+            </p>
+            <p class="instruction">Vous recevrez une email de confirmation.</p>
+            <form id="contact-form" method="post">
                 <div class="contact-form-loader"></div>
-                <fieldset>
-                    <label class="name">
-                        <input type="text" name="name" placeholder="Name:" value="" data-constraints="@Required @JustLetters" />
-                        <span class="empty-message">*This field is required.</span>
-                        <span class="error-message">*This is not a valid name.</span>
-                    </label>
-                    <label class="email">
-                        <input type="text" name="email" placeholder="E-mail:" value="" data-constraints="@Required @Email" />
-                        <span class="empty-message">*This field is required.</span>
-                        <span class="error-message">*This is not a valid email.</span>
-                    </label>
-                    <label class="phone">
-                        <input type="text" name="phone" placeholder="Phone:" value="" data-constraints="@Required @JustNumbers" />
-                        <span class="empty-message">*This field is required.</span>
-                        <span class="error-message">*This is not a valid phone.</span>
-                    </label>
-                    <label class="message">
-                        <textarea name="message" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-                        <span class="empty-message">*This field is required.</span>
-                        <span class="error-message">*The message is too short.</span>
-                    </label>
-                    <div class="ta__right">
-                        <a href="#" class="link-1" data-type="reset">clear</a>
-                        <a href="#" class="link-1" data-type="submit">send</a>
-                    </div>
-                </fieldset>
+
+                <label class="name">
+                    <input type="text" name="Prenom" placeholder="-- Prénom" required />
+                    <span class="empty-message">*This field is required.</span>
+                    <span class="error-message">*This is not a valid name.</span>
+                </label>
+                <label class="name">
+                    <input type="text" name="Nom" placeholder="-- Nom" required />
+                    <span class="empty-message">*This field is required.</span>
+                    <span class="error-message">*This is not a valid name.</span>
+                </label>
+                <label class="email">
+                    <input type="text" name="Email" placeholder="-- E-mail" required />
+                    <span class="empty-message">*This field is required.</span>
+                    <span class="error-message">*This is not a valid email.</span>
+                </label>
+                <label for="abonnements">
+                    <select name="abonnements" id="abonnements">
+                        <option disabled selected> -- sélectionnez une option -- </option>
+                        @foreach (var ab in Model.Abonnements)
+                        {
+                            <option value="@ab.NombreCredits">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
+                        }
+                        @*<option value="30">30 cours - 240€ (8€ par cours)</option>
+                        <option value="60">50 cours - 300€ (6€ par cours)</option>*@
+                    </select>
+                </label>
+                <div class="ta__right">
+                    <a href="#" class="link-1" data-type="reset">Vider les champs</a>
+                    <a href="#" class="link-1" data-type="submit">Valider</a>
+                </div>
+
                 <div class="modal fade response-message">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -77,7 +94,7 @@
                     </div>
                 </div>
             </form>
-        </div>*@
+        </div>
         <div class="clear"></div>
     </div>
 </section>

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace EcolePoleDance.Models
 {
-    public class CoursModel
+    public class AbonnementModel
     {
         #region Fields
-        private int _idCours, _maxParticipants;
-        private string _nomCours, _description, _image;
+        private int _idCours, _nombreCredits;
+        private decimal _montant, _prixParCours;
         #endregion
 
         #region Props
@@ -27,57 +27,45 @@ namespace EcolePoleDance.Models
             }
         }
 
-        public int MaxParticipants
+        public int NombreCredits
         {
             get
             {
-                return _maxParticipants;
+                return _nombreCredits;
             }
 
             set
             {
-                _maxParticipants = value;
+                _nombreCredits = value;
             }
         }
 
-        public string NomCours
+        public decimal Montant
         {
             get
             {
-                return _nomCours;
+                return _montant;
             }
 
             set
             {
-                _nomCours = value;
+                _montant = value;
             }
         }
 
-        public string Description
+        public decimal PrixParCours
         {
             get
             {
-                return _description;
+                return _prixParCours;
             }
 
             set
             {
-                _description = value;
+                _prixParCours = value;
             }
         }
-
-        public string Image
-        {
-            get
-            {
-                return _image;
-            }
-
-            set
-            {
-                _image = value;
-            }
-        } 
         #endregion
     }
 }
+
