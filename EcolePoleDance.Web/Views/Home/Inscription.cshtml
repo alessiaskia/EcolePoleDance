@@ -27,7 +27,7 @@
     <div class="container_12">
 
         <div class="grid_5">
-            <h4 class="color1 inset__1">Devenez membre de Pole Is Art</h4>
+            <h4 class="color1 inset__1">Inscrivez-vous</h4>
 
             <p class="instruction">Remplissez <span class="highlight">le formulaire</span> avec vos coordonnées </p>
             <p class="instruction">Ensuite, <span class="highlight">choisissez l'abonnement</span> que vous voulez souscrire et envoyez.</p>
@@ -66,15 +66,15 @@
                 </label>
                 <label for="abonnements">
                     <select name="abonnements" id="abonnements">
-                        <option disabled selected> -- sélectionnez une option -- </option>
+                        <option disabled selected> -- sélectionnez une option </option>
                         @foreach (var ab in Model.Abonnements)
                         {
                             <option value="@ab.NombreCredits">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
                         }
                     </select>
                 </label>
-                <div class="ta__right">
-                    <a href="#" class="link-1" data-type="reset">Vider les champs</a>
+                <div class="ta__center">
+                    @*<a href="#" class="link-1" data-type="reset">Vider les champs</a>*@
                     <a href="#" class="link-1" data-type="submit">Valider</a>
                 </div>
 

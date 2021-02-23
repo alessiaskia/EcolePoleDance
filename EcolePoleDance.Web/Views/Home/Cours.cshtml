@@ -13,46 +13,12 @@
 <section id="content">
     <div class="ic">More Website Templates at TemplateMonster.com - October 06, 2014!</div>
     <div class="container_12">
-        <div class="grid_5">
-            <h2 class="inset__1">Notre Horaire</h2>
-            <p class="color1">Nous sommes ouverts tous les jours de la semaine.</p>
-            <p>Chaque cours est donnée <strong>2 fois par semaine</strong>, pour vous permettre de ne jamais rater vos cours préférés.</p>
-            <table id="table-1">
-                <tr>
-                    <td>Monday</td>
-                    <td>7 pm - 10 pm (All lessons)</td>
-                </tr>
-                <tr>
-                    <td>Tuesday</td>
-                    <td>2 pm - 5 pm (All lessons)</td>
-                </tr>
-                <tr>
-                    <td>Wednesday</td>
-                    <td>7 pm - 10 pm (All lessons)</td>
-                </tr>
-                <tr>
-                    <td>Thursday</td>
-                    <td>2 pm - 5 pm (All lessons)</td>
-                </tr>
-                <tr>
-                    <td>Friday</td>
-                    <td>7 pm - 10 pm (All lessons)</td>
-                </tr>
-                <tr>
-                    <td>Saturday  </td>
-                    <td>2 pm - 5 pm (All lessons)</td>
-                </tr>
-                <tr>
-                    <td>Sunday  </td>
-                    <td>2 pm - 5 pm (All lessons)</td>
-                </tr>
-            </table>
-        </div>
-        <div class="grid_6 prefix_1">
-            <h2 class="inset__1">Nos salles et équipements</h2>
+        <div class="grid_6">
+            <h2 class="inset__1">Nos salles</h2>
             <p class="color1">Nous disposons d'une salle avec les barres de pole, d'une salle pour le renforcement musculaire et des vestiaires comfortables.</p>
             <p>Tout l'équipement est présent sur place : vous devrez juste venir avec votre serviette et bouteille d'eau.</p>
             <p>N'oubliez pas de vous assurer une place au cours <br /><strong>en réservant au moins 24 heures avant !</strong></p>
+            <img src="~/images/studio.jpg" />
             <div class="grid_3 alpha">
                 <ul class="list-1 inset__1">
                     <li><a href="#">Facilement accessible en transport en commun</a></li>
@@ -65,44 +31,81 @@
                     <li><a href="#">Places résérvables à l'avance</a></li>
                 </ul>
             </div>
-            <div class="clear"></div>
         </div>
+        <div class="grid_6">
+            <h2 class="inset__1">Notre Horaire</h2>
+            <p class="color1">Nous sommes ouverts tous les jours de la semaine.</p>
+            <p>Chaque cours est donnée <strong>2 fois par semaine</strong>, pour vous permettre de ne jamais rater vos cours préférés.</p>
+            <table id="table-1">
+                <tr>
+                    <td>Lundi</td>
+                    <td>18h30 - 19h45 Pole Débutant <br />  20h00 - 21h15 Pole Exotic</td>
+                </tr>
+                <tr>
+                    <td>Mardi</td>
+                    <td>18h30 - 19h45 Pole Intermédiaire <br />  20h00 - 21h15 Pole Impro</td>
+                </tr>
+                <tr>
+                    <td>Mercredi</td>
+                    <td>18h30 - 19h45 Pole Avancé <br />  20h00 - 21h30 Flexibilité</td>
+                </tr>
+                <tr>
+                    <td>Jeudi</td>
+                    <td>18h30 - 20h00 Renforcement <br />  20h00 - 21h15 Pole Débutant</td>
+                </tr>
+                <tr>
+                    <td>Vendredi</td>
+                    <td>18h30 - 19h45 Cerceau Aérien <br />  20h00 - 21h15 Pole Intermédiaire</td>
+                </tr>
+                <tr>
+                    <td>Samedi  </td>
+                    <td>10h30 - 11h45 Pole Avancé  <br />  12h00 - 13h30 Flexibilité <br /> 15h30 - 16h45 Pole Impro</td>
+                </tr>
+                <tr>
+                    <td>Dimanche  </td>
+                    <td>10h30 - 11h45 Renforcement  <br />  12h00 - 13h30 Cerceau Aérien <br /> 15h30 - 16h45 Pole Impro</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="clear"></div>
+
         <div class="grid_12">
             <div class="sep-1 offset__1"></div>
         </div>
 
+        <h2>TOUS NOS COURS</h2>
 
-        <div class="container_12">
-            <h2>TOUS NOS COURS</h2>
-            @for (int i = 0; i < Model.Cours.Count; i++)
+        @for (int i = 0; i < Model.Cours.Count; i++)
+        {
+            if (i % 2 == 0)
             {
-                if (i % 2 == 0)
-                {
-                    <div class="grid_5 ta__center">
-                        <h3 class="offset__2">@Model.Cours[i].NomCours</h3>
-                        <img src="/images/@Model.Cours[i].Image" alt="image-cours" class="cours-photo">
-                        <div class="extra_wrapper">
-                            <p class="color1">@Model.Cours[i].Description</p>
-                            <p>Professeur : (innerJoin from table Prof)</p>
-                            <a href="/Home/Equipe" class="link-1 color1">À propos du professeur</a>
-                        </div>
+                <div class="grid_5">
+                    <h3 class="offset__2 ta__center">@Model.Cours[i].NomCours</h3>
+                    <img src="/images/@Model.Cours[i].Image" alt="image-cours" class="cours-photo ta__center">
+                    <div class="extra_wrapper .ta__justify">
+                        <p class="color1">@Model.Cours[i].Description</p>
+                        <p>Professeur : (innerJoin from table Prof)</p>
+                        <p class="color1">À propos du <a href="/Home/Equipe" class=".ta__justify">professeur</a></p>
                     </div>
-                }
-                else
-                {
-                    <div class="grid_6 prefix_1 ta__center">
-                        <h3 class="offset__2">@Model.Cours[i].NomCours</h3>
-                        <img src="/images/@Model.Cours[i].Image" alt="image-cours" class="cours-photo">
-                        <div class="extra_wrapper">
-                            <p class="color1">@Model.Cours[i].Description</p>
-                            <p>Professeur : (innerJoin from table Prof)</p>
-                            <a href="/Home/Equipe" class="link-1">À propos du professeur</a>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                }
+                </div>
             }
-        </div>
+            else
+            {
+                <div class="grid_6 prefix_1">
+                    <h3 class="offset__2 ta__center">@Model.Cours[i].NomCours</h3>
+                    <img src="/images/@Model.Cours[i].Image" alt="image-cours" class="cours-photo ta__center">
+                    <div class="extra_wrapper .ta__justify">
+                        <p class="color1">@Model.Cours[i].Description</p>
+                        <p>Professeur : (innerJoin from table Prof)</p>
+                        <p class="color1">À propos du <a href="/Home/Equipe" class=".ta__justify">professeur</a></p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            }
+        }
     </div>
+
+
 </section>
 
