@@ -39,7 +39,8 @@ namespace EcolePoleDance.Web.Controllers
         public ActionResult Inscription()
         {
             ViewBag.Inscription = "current";
-            return View();
+            InscriptionViewModel im = new InscriptionViewModel();
+            return View(im);
         }
     }
 }
