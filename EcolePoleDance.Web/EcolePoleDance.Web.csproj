@@ -241,6 +241,7 @@
     <Content Include="Views\Home\Cours.cshtml" />
     <Content Include="Views\Home\Equipe.cshtml" />
     <Content Include="Views\Home\Inscription.cshtml" />
+    <Content Include="Views\Home\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

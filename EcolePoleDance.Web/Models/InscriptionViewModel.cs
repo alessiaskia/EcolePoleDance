@@ -13,10 +13,12 @@ namespace EcolePoleDance.Web.Models
         private DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
 
         private List<AbonnementModel> _abonnements;
+        private InscriptionModel _formInscription;
 
         public InscriptionViewModel()
         {
             Abonnements = ctx.GetAllAbonnements();
+            FormInscription = ctx.SaveInscription();
         }
 
         public List<AbonnementModel> Abonnements
@@ -29,6 +31,19 @@ namespace EcolePoleDance.Web.Models
             set
             {
                 _abonnements = value;
+            }
+        }
+
+        public InscriptionModel FormInscription
+        {
+            get
+            {
+                return _formInscription;
+            }
+
+            set
+            {
+                _formInscription = value;
             }
         }
 

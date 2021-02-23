@@ -9,21 +9,21 @@ namespace EcolePoleDance.Entities
     public class AbonnementEntity
     {
         #region Fields
-        private int _idCours, _nombreCredits;
+        private int _idAbonnement, _nombreCredits;
         private decimal _montant, _prixParCours; 
         #endregion
 
         #region Props
-        public int IdCours
+        public int IdAbonnement
         {
             get
             {
-                return _idCours;
+                return _idAbonnement;
             }
 
             set
             {
-                _idCours = value;
+                _idAbonnement = value;
             }
         }
 

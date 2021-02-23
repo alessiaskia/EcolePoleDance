@@ -47,8 +47,8 @@
             </p>
             <p class="instruction">Vous recevrez une email de confirmation.</p>
             <form id="contact-form" method="post">
+                @Html.AntiForgeryToken()
                 <div class="contact-form-loader"></div>
-
                 <label class="name">
                     <input type="text" name="Prenom" placeholder="-- Prénom" required />
                     <span class="empty-message">*This field is required.</span>
@@ -65,11 +65,11 @@
                     <span class="error-message">*This is not a valid email.</span>
                 </label>
                 <label for="abonnements">
-                    <select name="abonnements" id="abonnements">
+                    <select name="listeAbonnements" id="listeAbonnements">
                         <option disabled selected> -- sélectionnez une option </option>
                         @foreach (var ab in Model.Abonnements)
                         {
-                            <option value="@ab.NombreCredits">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
+                            <option value="@ab.NombreCredits" id="@ab.IdAbonnement" name="TypeAbonnement">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
                         }
                     </select>
                 </label>
@@ -92,6 +92,15 @@
                     </div>
                 </div>
             </form>
+            @if (ViewBag.SuccessMessage != null)
+            {
+                @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
+            }
+
+            @if (ViewBag.ErrorMessage != null)
+            {
+                @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
         </div>
         <div class="clear"></div>
     </div>

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AbonnementEntity.cs" />
     <Compile Include="CoursEntity.cs" />
+    <Compile Include="InscriptionEntity.cs" />
     <Compile Include="ProfEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

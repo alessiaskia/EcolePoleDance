@@ -14,12 +14,14 @@ namespace EcolePoleDance.Repositories
         IConcreteRepository<ProfEntity> _profRepo;
         IConcreteRepository<CoursEntity> _coursRepo;
         IConcreteRepository<AbonnementEntity> _abonnementRepo;
+        IConcreteRepository<InscriptionEntity> _inscriptionRepo;
 
         public DataContext(string connectionString)
         {
             _profRepo = new ProfRepository(connectionString);
             _coursRepo = new CoursRepository(connectionString);
             _abonnementRepo = new AbonnementRepository(connectionString);
+            _inscriptionRepo = new InscriptionRepository(connectionString);
         }
 
         #region Professeurs
@@ -71,11 +73,25 @@ namespace EcolePoleDance.Repositories
                 .Select(a =>
                 new AbonnementModel()
                 {
+                    IdAbonnement = a.IdAbonnement,
                     NombreCredits = a.NombreCredits,
                     Montant = a.Montant,
                     PrixParCours = a.PrixParCours,
                 }
                 ).ToList();
+        }
+        #endregion
+
+        #region Inscription
+        public bool SaveInscription(InscriptionModel im)
+        {
+            InscriptionEntity ie = new InscriptionEntity();
+            ie.Prenom = im.Prenom;
+            ie.Nom = im.Nom;
+            ie.Email = im.Email;
+            ie.TypeAbonnement = im.TypeAbonnement;
+
+            return _inscriptionRepo.Insert(ie);
         }
         #endregion
     }

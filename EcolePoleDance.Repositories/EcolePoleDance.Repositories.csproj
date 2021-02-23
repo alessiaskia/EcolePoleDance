@@ -44,6 +44,7 @@
     <Compile Include="AbonnementRepository.cs" />
     <Compile Include="CoursRepository.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="InscriptionRepository.cs" />
     <Compile Include="ProfRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
