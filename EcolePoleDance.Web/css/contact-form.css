@@ -386,12 +386,12 @@ button.close {
 
 p.instruction {
     padding-top: 4px;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
 }
 
 .highlight {
     color: #7e4a7c;
-    font-weight: 350;
+    font-weight: 400;
 }
 
 #contact-form select {

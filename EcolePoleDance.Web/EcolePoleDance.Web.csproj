@@ -126,7 +126,6 @@
     </Compile>
     <Compile Include="Models\CoursViewModel.cs" />
     <Compile Include="Models\EquipeViewModel.cs" />
-    <Compile Include="Models\InscriptionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +155,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\aerial.jpg" />
     <Content Include="images\arrowws.png" />
     <Content Include="images\big1.jpg" />
     <Content Include="images\cerceau.jpg" />
@@ -178,6 +178,7 @@
     <Content Include="images\slide-2.jpg" />
     <Content Include="images\slide-3.jpg" />
     <Content Include="images\studio.jpg" />
+    <Content Include="images\sunset.jpg" />
     <Content Include="images\thumb-1.jpg" />
     <Content Include="images\thumb-2.jpg" />
     <Content Include="images\thumb-3.jpg" />

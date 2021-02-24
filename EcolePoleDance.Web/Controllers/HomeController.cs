@@ -45,19 +45,18 @@ namespace EcolePoleDance.Web.Controllers
         public ActionResult Inscription()
         {
             ViewBag.Inscription = "current";
-            InscriptionViewModel im = new InscriptionViewModel();
-            return View(im);
+            return View();
         }
 
         //envoyer le formulaire
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Formulaire(InscriptionModel form)
+        public ActionResult Formulaire(ClientModel form)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //validation coté serveur vs. annotations
             {
                 DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
-                if (ctx.SaveInscription(form))
+                if (ctx.CreateUser(form))
                 {
                     ViewBag.SuccessMessage = "Message bien envoyé";
                     sendEmail(form);
@@ -76,13 +75,13 @@ namespace EcolePoleDance.Web.Controllers
             }
         }
 
-        private void sendEmail(InscriptionModel form)
+        private void sendEmail(ClientModel form)
         {
             MailMessage mail = new MailMessage();
             mail.To.Add(form.Email);
             mail.From = new MailAddress("a.scaccia@interface3.be");
             mail.Subject = "Nouvelle demande d'inscription";
-            string Body = $"<h1>{form.Prenom} {form.Nom} veut d'inscrire avec l'abonnement </h1><br>{form.TypeAbonnement}";
+            string Body = $"<h1>{form.Prenom} {form.Nom} veut d'inscrire à Pole Is Art </h1>";
             mail.Body = Body;
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();

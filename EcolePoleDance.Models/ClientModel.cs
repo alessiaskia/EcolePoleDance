@@ -7,9 +7,23 @@ using System.Threading.Tasks;
 
 namespace EcolePoleDance.Models
 {
-    public class InscriptionModel
+    public class ClientModel
     {
-        private string _prenom, _nom, _email, _typeAbonnement;
+        private int _idClient;
+        private string _prenom, _nom, _email, _password, _confirmPassword;
+
+        public int IdClient
+        {
+            get
+            {
+                return _idClient;
+            }
+
+            set
+            {
+                _idClient = value;
+            }
+        }
 
         [Required]
         [MaxLength(50)]
@@ -59,17 +73,35 @@ namespace EcolePoleDance.Models
         }
 
         [Required]
-        public string TypeAbonnement
+        [MaxLength(50)]
+        public string Password
         {
             get
             {
-                return _typeAbonnement;
+                return _password;
             }
 
             set
             {
-                _typeAbonnement = value;
+                _password = value;
             }
         }
+
+        [Required]
+        [MaxLength(50)]
+        [Compare("Password", ErrorMessage = "No Matching Password")]
+        public string ConfirmPassword
+        {
+            get
+            {
+                return _confirmPassword;
+            }
+
+            set
+            {
+                _confirmPassword = value;
+            }
+        }
+
     }
 }

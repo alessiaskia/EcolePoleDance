@@ -1,5 +1,4 @@
-﻿@model EcolePoleDance.Web.Models.InscriptionViewModel
-@{
+﻿@{
     ViewBag.Title = "Inscription";
 }
 
@@ -25,36 +24,38 @@
 <section id="content">
     <div class="ic">More Website Templates at TemplateMonster.com - October 06, 2014!</div>
     <div class="container_12">
-
         <div class="grid_5">
-            <h4 class="color1 inset__1">Inscrivez-vous</h4>
-
+            <h2 class="color1 inset__1">Inscrivez-vous</h2>
             <p class="instruction">Remplissez <span class="highlight">le formulaire</span> avec vos coordonnées </p>
-            <p class="instruction">Ensuite, <span class="highlight">choisissez l'abonnement</span> que vous voulez souscrire et envoyez.</p>
-            <p class="instruction"><span class="highlight">Payez par virement bancaire</span>. Voici les coordonnées :</p>
-
-
-            Pole Is Art <br>
-            Rue du T-Rex, 39 <br>
-            1040 Bruxelles <br>
-            IBAN: BE22 4444 5555 6666 <br>
-
+            <p class="instruction">Vous recevrez une email de confirmation.</p>
         </div>
         <div class="grid_6 prefix_1">
-            <h4 class="color1 inset__1"></h4>
-            <p class="instruction">
-                Les administrateur de l'école valideront votre inscription dès que le montant de l'abonnement sera reglé.
-            </p>
-            <p class="instruction">Vous recevrez une email de confirmation.</p>
+            @*I'll move everything in the login areaaaaa*@
+            @*<p class="instruction">Ensuite, <span class="highlight">choisissez l'abonnement</span> que vous voulez souscrire et envoyez.</p>
+                    <p class="instruction"><span class="highlight">Payez par virement bancaire</span>. Voici les coordonnées :</p>
+
+
+                    Pole Is Art <br>
+                    Rue du T-Rex, 39 <br>
+                    1040 Bruxelles <br>
+                    IBAN: BE22 4444 5555 6666 <br>
+
+                </div>
+                <div class="grid_6 prefix_1">
+                    <h4 class="color1 inset__1"></h4>
+                    <p class="instruction">
+                        Les administrateur de l'école valideront votre inscription dès que le montant de l'abonnement sera reglé.
+                    </p>
+            *@
             <form id="contact-form" method="post">
                 @Html.AntiForgeryToken()
                 <div class="contact-form-loader"></div>
-                <label class="name">
+                <label class="first-name">
                     <input type="text" name="Prenom" placeholder="-- Prénom" required />
                     <span class="empty-message">*This field is required.</span>
                     <span class="error-message">*This is not a valid name.</span>
                 </label>
-                <label class="name">
+                <label class="last-name">
                     <input type="text" name="Nom" placeholder="-- Nom" required />
                     <span class="empty-message">*This field is required.</span>
                     <span class="error-message">*This is not a valid name.</span>
@@ -64,15 +65,20 @@
                     <span class="empty-message">*This field is required.</span>
                     <span class="error-message">*This is not a valid email.</span>
                 </label>
-                <label for="abonnements">
-                    <select name="listeAbonnements" id="listeAbonnements">
-                        <option disabled selected> -- sélectionnez une option </option>
-                        @foreach (var ab in Model.Abonnements)
-                        {
-                            <option value="@ab.NombreCredits" id="@ab.IdAbonnement" name="TypeAbonnement">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
-                        }
-                    </select>
+                <label class="password">
+                    <input type="text" name="Password" placeholder="-- Mot de passe" required />
+                    <span class="empty-message">*This field is required.</span>
+                    <span class="error-message">*This is not a valid email.</span>
                 </label>
+                @*<label for="abonnements"> (je vais rajouter ça dans la partie Zone Membre)
+                        <select name="idAbonnement" id="listeAbonnements">
+                            <option disabled selected> -- sélectionnez une option </option>
+                            @foreach (var ab in Model.Abonnements)
+                            {
+                                <option value="@ab.NombreCredits" id="@ab.IdAbonnement" name="TypeAbonnement">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
+                            }
+                        </select>
+                    </label>*@
                 <div class="ta__center">
                     @*<a href="#" class="link-1" data-type="reset">Vider les champs</a>*@
                     <a href="#" class="link-1" data-type="submit">Valider</a>

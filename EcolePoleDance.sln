@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcolePoleDance.Repositories
 		{516536D5-EE64-4A51-9788-339BD457C268} = {516536D5-EE64-4A51-9788-339BD457C268}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{9FF7CA9F-19B3-4F31-83FA-F13C58132D4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{59A225C3-C516-4EAC-8C3B-93356C643246}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59A225C3-C516-4EAC-8C3B-93356C643246}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A225C3-C516-4EAC-8C3B-93356C643246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FF7CA9F-19B3-4F31-83FA-F13C58132D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF7CA9F-19B3-4F31-83FA-F13C58132D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF7CA9F-19B3-4F31-83FA-F13C58132D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF7CA9F-19B3-4F31-83FA-F13C58132D4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

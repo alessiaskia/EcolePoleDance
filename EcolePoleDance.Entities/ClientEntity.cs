@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace EcolePoleDance.Entities
 {
-    public class InscriptionEntity
+    public class ClientEntity
     {
         #region Fields
-        private int _idInscription;
-        private string _prenom, _nom, _email, _typeAbonnement;
+        private int _idClient;
+        private string _prenom, _nom, _email, _password, _salt;
         #endregion
 
         #region Props
-        public int IdInscription
+        public int IdClient
         {
             get
             {
-                return _idInscription;
+                return _idClient;
             }
 
             set
             {
-                _idInscription = value;
+                _idClient = value;
             }
         }
 
@@ -66,16 +66,29 @@ namespace EcolePoleDance.Entities
             }
         }
 
-        public string TypeAbonnement
+        public string Password
         {
             get
             {
-                return _typeAbonnement;
+                return _password;
             }
 
             set
             {
-                _typeAbonnement = value;
+                _password = value;
+            }
+        }
+
+        public string Salt
+        {
+            get
+            {
+                return _salt;
+            }
+
+            set
+            {
+                _salt = value;
             }
         } 
         #endregion

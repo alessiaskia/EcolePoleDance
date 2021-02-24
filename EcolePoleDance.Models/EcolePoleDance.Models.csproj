@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="AbonnementModel.cs" />
     <Compile Include="CoursModel.cs" />
-    <Compile Include="InscriptionModel.cs" />
+    <Compile Include="ClientModel.cs" />
     <Compile Include="ProfModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

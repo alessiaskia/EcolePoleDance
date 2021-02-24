@@ -14,14 +14,14 @@ namespace EcolePoleDance.Repositories
         IConcreteRepository<ProfEntity> _profRepo;
         IConcreteRepository<CoursEntity> _coursRepo;
         IConcreteRepository<AbonnementEntity> _abonnementRepo;
-        IConcreteRepository<InscriptionEntity> _inscriptionRepo;
+        IConcreteRepository<ClientEntity> _clientRepo;
 
         public DataContext(string connectionString)
         {
             _profRepo = new ProfRepository(connectionString);
             _coursRepo = new CoursRepository(connectionString);
             _abonnementRepo = new AbonnementRepository(connectionString);
-            _inscriptionRepo = new InscriptionRepository(connectionString);
+            _clientRepo = new ClientRepository(connectionString);
         }
 
         #region Professeurs
@@ -57,10 +57,10 @@ namespace EcolePoleDance.Repositories
                 .Select(c =>
                 new CoursModel()
                 {
-                NomCours = c.NomCours,
-                MaxParticipants = c.MaxParticipants,
-                Description = c.Description,
-                Image = c.Image,
+                    NomCours = c.NomCours,
+                    MaxParticipants = c.MaxParticipants,
+                    Description = c.Description,
+                    Image = c.Image,
                 }
                 ).ToList();
         }
@@ -83,15 +83,17 @@ namespace EcolePoleDance.Repositories
         #endregion
 
         #region Inscription
-        public bool SaveInscription(InscriptionModel im)
+        public bool CreateUser(ClientModel cm)
         {
-            InscriptionEntity ie = new InscriptionEntity();
-            ie.Prenom = im.Prenom;
-            ie.Nom = im.Nom;
-            ie.Email = im.Email;
-            ie.TypeAbonnement = im.TypeAbonnement;
+            ClientEntity clientEntity = new ClientEntity()
+            {
+                Prenom = cm.Prenom,
+                Nom = cm.Nom,
+                Email = cm.Email,
+                Password = cm.Password
+            };
 
-            return _inscriptionRepo.Insert(ie);
+            return _clientRepo.Insert(clientEntity);
         }
         #endregion
     }

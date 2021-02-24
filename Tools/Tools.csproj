@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59A225C3-C516-4EAC-8C3B-93356C643246}</ProjectGuid>
+    <ProjectGuid>{9FF7CA9F-19B3-4F31-83FA-F13C58132D4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EcolePoleDance.Repositories</RootNamespace>
-    <AssemblyName>EcolePoleDance.Repositories</AssemblyName>
+    <RootNamespace>Tools</RootNamespace>
+    <AssemblyName>Tools</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,30 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbonnementRepository.cs" />
-    <Compile Include="ClientRepository.cs" />
-    <Compile Include="CoursRepository.cs" />
-    <Compile Include="DataContext.cs" />
-    <Compile Include="ProfRepository.cs" />
+    <Compile Include="SecurityHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EcolePoleDance.DAL\EcolePoleDance.DAL.csproj">
-      <Project>{f8a089ca-a55a-487a-ae87-4ac652c7b944}</Project>
-      <Name>EcolePoleDance.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EcolePoleDance.Entities\EcolePoleDance.Entities.csproj">
-      <Project>{516536d5-ee64-4a51-9788-339bd457c268}</Project>
-      <Name>EcolePoleDance.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EcolePoleDance.Models\EcolePoleDance.Models.csproj">
-      <Project>{fa429ba1-517e-48bf-9d26-3c4ddbc6c52f}</Project>
-      <Name>EcolePoleDance.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tools\Tools.csproj">
-      <Project>{9ff7ca9f-19b3-4f31-83fa-f13c58132d4e}</Project>
-      <Name>Tools</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
