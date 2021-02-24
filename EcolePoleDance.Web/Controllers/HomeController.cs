@@ -51,7 +51,7 @@ namespace EcolePoleDance.Web.Controllers
         //envoyer le formulaire
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Formulaire(ClientModel form)
+        public ActionResult Inscription(ClientModel form) //ici l'action et la view ont le meme nom (dans la ++ des cas)
         {
             if (ModelState.IsValid) //validation coté serveur vs. annotations
             {

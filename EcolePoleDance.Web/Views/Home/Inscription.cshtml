@@ -66,37 +66,42 @@
                     <span class="error-message">*This is not a valid email.</span>
                 </label>
                 <label class="password">
-                    <input type="text" name="Password" placeholder="-- Mot de passe" required />
+                    <input type="password" name="Password" placeholder="-- Mot de passe" required />
+                    <span class="empty-message">*This field is required.</span>
+                    <span class="error-message">*This is not a valid email.</span>
+                </label>
+                <label class="confirmPassword">
+                    <input type="password" name="ConfirmPassword" placeholder="-- Confirmez le mot de passe" required />
                     <span class="empty-message">*This field is required.</span>
                     <span class="error-message">*This is not a valid email.</span>
                 </label>
                 @*<label for="abonnements"> (je vais rajouter ça dans la partie Zone Membre)
-                        <select name="idAbonnement" id="listeAbonnements">
-                            <option disabled selected> -- sélectionnez une option </option>
-                            @foreach (var ab in Model.Abonnements)
-                            {
-                                <option value="@ab.NombreCredits" id="@ab.IdAbonnement" name="TypeAbonnement">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
-                            }
-                        </select>
-                    </label>*@
+            <select name="idAbonnement" id="listeAbonnements">
+                <option disabled selected> -- sélectionnez une option </option>
+                @foreach (var ab in Model.Abonnements)
+                {
+                    <option value="@ab.NombreCredits" id="@ab.IdAbonnement" name="TypeAbonnement">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
+                }
+            </select>
+        </label>*@
                 <div class="ta__center">
                     @*<a href="#" class="link-1" data-type="reset">Vider les champs</a>*@
-                    <a href="#" class="link-1" data-type="submit">Valider</a>
+                    <button class="link-1" data-type="submit">Valider</button>
                 </div>
 
-                <div class="modal fade response-message">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">Modal title</h4>
-                            </div>
-                            <div class="modal-body">
-                                You message has been sent! We will be in touch soon.
-                            </div>
-                        </div>
+                @*<div class="modal fade response-message">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        You message has been sent! We will be in touch soon.
                     </div>
                 </div>
+            </div>
+        </div>*@
             </form>
             @if (ViewBag.SuccessMessage != null)
             {

@@ -11,6 +11,7 @@ namespace EcolePoleDance.Models
         #region Fields
         private int _idCours, _maxParticipants;
         private string _nomCours, _description, _image;
+        private string _prenomProf;
         #endregion
 
         #region Props
@@ -77,7 +78,24 @@ namespace EcolePoleDance.Models
             {
                 _image = value;
             }
-        } 
+        }
+
+        public string PrenomProf
+        {
+            get
+            {
+                return _prenomProf;
+            }
+
+            set
+            {
+                _prenomProf = value;
+            }
+        }
+
+
+
+
         #endregion
     }
 }

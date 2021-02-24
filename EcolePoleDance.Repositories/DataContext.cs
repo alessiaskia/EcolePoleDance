@@ -15,6 +15,7 @@ namespace EcolePoleDance.Repositories
         IConcreteRepository<CoursEntity> _coursRepo;
         IConcreteRepository<AbonnementEntity> _abonnementRepo;
         IConcreteRepository<ClientEntity> _clientRepo;
+        IConcreteRepository<EcoleEntity> _ecoleRepo;
 
         public DataContext(string connectionString)
         {
@@ -22,19 +23,10 @@ namespace EcolePoleDance.Repositories
             _coursRepo = new CoursRepository(connectionString);
             _abonnementRepo = new AbonnementRepository(connectionString);
             _clientRepo = new ClientRepository(connectionString);
+            _ecoleRepo = new EcoleRepository(connectionString);
         }
 
         #region Professeurs
-
-        //public ProfModel GetProfModel()
-        //{
-        ////Récupération entity
-        //ProfEntity profFromDB = _profRepo.GetOne(5);
-
-        ////Mapping entity vers Model
-
-        //}
-
         public List<ProfModel> GetAllProfs()
         {
             return _profRepo.Get()
@@ -61,6 +53,7 @@ namespace EcolePoleDance.Repositories
                     MaxParticipants = c.MaxParticipants,
                     Description = c.Description,
                     Image = c.Image,
+                    //PrenomProf = ((ProfRepository)_profRepo).GetFromCours(c.IdCours)
                 }
                 ).ToList();
         }
@@ -90,11 +83,16 @@ namespace EcolePoleDance.Repositories
                 Prenom = cm.Prenom,
                 Nom = cm.Nom,
                 Email = cm.Email,
-                Password = cm.Password
+                Password = cm.Password,
+                ConfirmPassword = cm.ConfirmPassword
             };
 
             return _clientRepo.Insert(clientEntity);
         }
+        #endregion
+
+        #region Ecole
+        //still don't know what I need here
         #endregion
     }
 }

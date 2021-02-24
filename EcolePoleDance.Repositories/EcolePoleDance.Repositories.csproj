@@ -45,6 +45,7 @@
     <Compile Include="ClientRepository.cs" />
     <Compile Include="CoursRepository.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="EcoleRepository.cs" />
     <Compile Include="ProfRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

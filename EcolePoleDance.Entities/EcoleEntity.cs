@@ -6,50 +6,21 @@ using System.Threading.Tasks;
 
 namespace EcolePoleDance.Entities
 {
-    public class ClientEntity
+    public class EcoleEntity
     {
-        #region Fields
-        private int _idClient;
-        private string _prenom, _nom, _email, _password, _confirmPassword, _salt;
-        #endregion
+        private int _idEcole;
+        private string _email, _tel, _compteBancaire, _rue, _numero, _ville;
 
-        #region Props
-        public int IdClient
+        public int IdEcole
         {
             get
             {
-                return _idClient;
+                return _idEcole;
             }
 
             set
             {
-                _idClient = value;
-            }
-        }
-
-        public string Prenom
-        {
-            get
-            {
-                return _prenom;
-            }
-
-            set
-            {
-                _prenom = value;
-            }
-        }
-
-        public string Nom
-        {
-            get
-            {
-                return _nom;
-            }
-
-            set
-            {
-                _nom = value;
+                _idEcole = value;
             }
         }
 
@@ -66,44 +37,69 @@ namespace EcolePoleDance.Entities
             }
         }
 
-        public string Password
+        public string Tel
         {
             get
             {
-                return _password;
+                return _tel;
             }
 
             set
             {
-                _password = value;
+                _tel = value;
             }
         }
 
-        public string Salt
+        public string CompteBancaire
         {
             get
             {
-                return _salt;
+                return _compteBancaire;
             }
 
             set
             {
-                _salt = value;
+                _compteBancaire = value;
             }
         }
 
-        public string ConfirmPassword
+        public string Rue
         {
             get
             {
-                return _confirmPassword;
+                return _rue;
             }
 
             set
             {
-                _confirmPassword = value;
+                _rue = value;
             }
         }
-        #endregion
+
+        public string Numero
+        {
+            get
+            {
+                return _numero;
+            }
+
+            set
+            {
+                _numero = value;
+            }
+        }
+
+        public string Ville
+        {
+            get
+            {
+                return _ville;
+            }
+
+            set
+            {
+                _ville = value;
+            }
+        }
     }
 }

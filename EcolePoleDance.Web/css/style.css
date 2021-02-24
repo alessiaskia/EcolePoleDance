@@ -210,6 +210,10 @@ a:hover {
 .link-1:hover {
 	color:#000
 }
+
+button {
+	border: none;
+}
 .mb0 {
 	margin-bottom:0!important
 }

@@ -15,11 +15,6 @@ namespace EcolePoleDance.Repositories
 
         }
 
-        public bool Delete(ProfEntity toDelete)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ProfEntity> Get()
         {
             string requete = "Select * from Prof";
@@ -34,6 +29,20 @@ namespace EcolePoleDance.Repositories
             return base.GetOne(PK, requete);
         }
 
+        //Obtain info professor from Cours
+        public List<ProfEntity> GetFromCours(int idCours)
+        {
+            string requete = @"SELECT Prof.Prenom, Prof.InfoProf
+                               FROM   Cours INNER JOIN
+                               Prof ON Cours.IdProf = Prof.IdProf
+                               WHERE Cours.IdCours="+idCours;
+            return base.Get(requete);
+        }
+
+        public bool Delete(ProfEntity toDelete)
+        {
+            throw new NotImplementedException();
+        }
         public bool Insert(ProfEntity toInsert)
         {
             throw new NotImplementedException();
@@ -43,5 +52,7 @@ namespace EcolePoleDance.Repositories
         {
             throw new NotImplementedException();
         }
+
+
     }
 }
