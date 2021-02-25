@@ -33,6 +33,7 @@ namespace EcolePoleDance.Repositories
                 .Select(p =>
                 new ProfModel()
                 {
+                    IdProf = p.IdProf,
                     Prenom = p.Prenom,
                     InfoProf = p.InfoProf,
                     Photo = p.Photo
@@ -53,7 +54,7 @@ namespace EcolePoleDance.Repositories
                     MaxParticipants = c.MaxParticipants,
                     Description = c.Description,
                     Image = c.Image,
-                    //PrenomProf = ((ProfRepository)_profRepo).GetFromCours(c.IdCours)
+                    PrenomProf = ((ProfRepository)_profRepo).GetFromCours(c.IdCours).Prenom
                 }
                 ).ToList();
         }

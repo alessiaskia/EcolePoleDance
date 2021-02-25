@@ -26,27 +26,36 @@
     <div class="container_12">
         <div class="grid_5">
             <h2 class="color1 inset__1">Inscrivez-vous</h2>
-            <p class="instruction">Remplissez <span class="highlight">le formulaire</span> avec vos coordonnées </p>
+            <p class="instruction">Remplissez le formulaire avec vos coordonnées. </p>
             <p class="instruction">Vous recevrez une email de confirmation.</p>
         </div>
         <div class="grid_6 prefix_1">
             @*I'll move everything in the login areaaaaa*@
             @*<p class="instruction">Ensuite, <span class="highlight">choisissez l'abonnement</span> que vous voulez souscrire et envoyez.</p>
-                    <p class="instruction"><span class="highlight">Payez par virement bancaire</span>. Voici les coordonnées :</p>
+            <p class="instruction"><span class="highlight">Payez par virement bancaire</span>. Voici les coordonnées :</p>
 
 
-                    Pole Is Art <br>
-                    Rue du T-Rex, 39 <br>
-                    1040 Bruxelles <br>
-                    IBAN: BE22 4444 5555 6666 <br>
+            Pole Is Art <br>
+            Rue du T-Rex, 39 <br>
+            1040 Bruxelles <br>
+            IBAN: BE22 4444 5555 6666 <br>
 
-                </div>
-                <div class="grid_6 prefix_1">
-                    <h4 class="color1 inset__1"></h4>
-                    <p class="instruction">
-                        Les administrateur de l'école valideront votre inscription dès que le montant de l'abonnement sera reglé.
-                    </p>
+        </div>
+        <div class="grid_6 prefix_1">
+            <h4 class="color1 inset__1"></h4>
+            <p class="instruction">
+                Les administrateur de l'école valideront votre inscription dès que le montant de l'abonnement sera reglé.
+            </p>
             *@
+            @if (ViewBag.SuccessMessage != null)
+            {
+                @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
+            }
+
+            @if (ViewBag.ErrorMessage != null)
+            {
+                @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
             <form id="contact-form" method="post">
                 @Html.AntiForgeryToken()
                 <div class="contact-form-loader"></div>
@@ -76,42 +85,33 @@
                     <span class="error-message">*This is not a valid email.</span>
                 </label>
                 @*<label for="abonnements"> (je vais rajouter ça dans la partie Zone Membre)
-            <select name="idAbonnement" id="listeAbonnements">
-                <option disabled selected> -- sélectionnez une option </option>
-                @foreach (var ab in Model.Abonnements)
-                {
-                    <option value="@ab.NombreCredits" id="@ab.IdAbonnement" name="TypeAbonnement">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
-                }
-            </select>
-        </label>*@
+                <select name="idAbonnement" id="listeAbonnements">
+                    <option disabled selected> -- sélectionnez une option </option>
+                    @foreach (var ab in Model.Abonnements)
+                    {
+                        <option value="@ab.NombreCredits" id="@ab.IdAbonnement" name="TypeAbonnement">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
+                    }
+                </select>
+            </label>*@
                 <div class="ta__center">
                     @*<a href="#" class="link-1" data-type="reset">Vider les champs</a>*@
                     <button class="link-1" data-type="submit">Valider</button>
                 </div>
 
                 @*<div class="modal fade response-message">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        You message has been sent! We will be in touch soon.
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            You message has been sent! We will be in touch soon.
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>*@
+            </div>*@
             </form>
-            @if (ViewBag.SuccessMessage != null)
-            {
-                @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
-            }
-
-            @if (ViewBag.ErrorMessage != null)
-            {
-                @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
-            }
         </div>
         <div class="clear"></div>
     </div>

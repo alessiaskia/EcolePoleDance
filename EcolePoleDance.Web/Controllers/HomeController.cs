@@ -58,7 +58,7 @@ namespace EcolePoleDance.Web.Controllers
                 DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
                 if (ctx.CreateUser(form))
                 {
-                    ViewBag.SuccessMessage = "Message bien envoyé";
+                    ViewBag.SuccessMessage = "Votre demande d'inscription a bien été envoyée";
                     sendEmail(form);
                     return View();
                 }
@@ -70,7 +70,7 @@ namespace EcolePoleDance.Web.Controllers
             }
             else
             {
-                ViewBag.ErrorMessage = "Formulaire error";
+                ViewBag.ErrorMessage = "Formulaire error : vérifiez les données insérées et réessayez";
                 return View();
             }
         }

@@ -78,7 +78,7 @@
         display: none
     }
 
-    #contact-form input[type=text] {
+    #contact-form input[type=text], #contact-form input[type=password] {
         width: 100%;
         border-radius: 4px;
         line-height: 20px;
@@ -387,11 +387,6 @@ button.close {
 p.instruction {
     padding-top: 4px;
     padding-bottom: 4px;
-}
-
-.highlight {
-    color: #7e4a7c;
-    font-weight: 400;
 }
 
 #contact-form select {

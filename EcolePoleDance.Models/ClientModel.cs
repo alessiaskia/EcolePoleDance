@@ -9,21 +9,21 @@ namespace EcolePoleDance.Models
 {
     public class ClientModel
     {
-        private int _idClient;
+        //private int _idClient;
         private string _prenom, _nom, _email, _password, _confirmPassword;
 
-        public int IdClient
-        {
-            get
-            {
-                return _idClient;
-            }
+        //public int IdClient
+        //{
+        //    get
+        //    {
+        //        return _idClient;
+        //    }
 
-            set
-            {
-                _idClient = value;
-            }
-        }
+        //    set
+        //    {
+        //        _idClient = value;
+        //    }
+        //}
 
         [Required]
         [MaxLength(50)]

@@ -30,13 +30,13 @@ namespace EcolePoleDance.Repositories
         }
 
         //Obtain info professor from Cours
-        public List<ProfEntity> GetFromCours(int idCours)
+        public ProfEntity GetFromCours(int idCours)
         {
             string requete = @"SELECT Prof.Prenom, Prof.InfoProf
                                FROM   Cours INNER JOIN
                                Prof ON Cours.IdProf = Prof.IdProf
-                               WHERE Cours.IdCours="+idCours;
-            return base.Get(requete);
+                               WHERE Cours.IdCours=" + idCours;
+            return base.Get(requete).FirstOrDefault();
         }
 
         public bool Delete(ProfEntity toDelete)
