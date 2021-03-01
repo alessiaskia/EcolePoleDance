@@ -109,7 +109,9 @@ strong {
 address {
 	font-style:normal
 }
-
+.tarifs {
+	 max-width: 20px;
+ }
 p {
 	margin-bottom: 24px;
 }
@@ -119,6 +121,10 @@ p {
 	font-weight: 400;
 }
 
+.instruction {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
 
 .extra_wrapper p {
 	padding: 10px 40px

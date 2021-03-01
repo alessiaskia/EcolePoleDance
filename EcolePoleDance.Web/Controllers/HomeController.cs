@@ -37,7 +37,8 @@ namespace EcolePoleDance.Web.Controllers
         public ActionResult Tarifs()
         {
             ViewBag.Tarifs = "current";
-            return View();
+            TarifsViewModel tm = new TarifsViewModel();
+            return View(tm);
         }
 
         //Afficher le formulaire

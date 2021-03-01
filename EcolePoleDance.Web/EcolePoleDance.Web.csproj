@@ -126,6 +126,7 @@
     </Compile>
     <Compile Include="Models\CoursViewModel.cs" />
     <Compile Include="Models\EquipeViewModel.cs" />
+    <Compile Include="Models\TarifsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -242,7 +243,7 @@
     <Content Include="Views\Home\Cours.cshtml" />
     <Content Include="Views\Home\Equipe.cshtml" />
     <Content Include="Views\Home\Inscription.cshtml" />
-    <Content Include="Views\Home\View.cshtml" />
+    <Content Include="Views\Home\Tarifs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

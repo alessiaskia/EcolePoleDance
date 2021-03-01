@@ -384,10 +384,6 @@ button.close {
     -webkit-appearance: none
 }
 
-p.instruction {
-    padding-top: 4px;
-    padding-bottom: 4px;
-}
 
 #contact-form select {
     width: 100%;

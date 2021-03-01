@@ -1,0 +1,39 @@
+﻿@model EcolePoleDance.Web.Models.TarifsViewModel
+
+@{
+    ViewBag.Title = "Tarifs";
+}
+
+<div class="container_12">
+    <div class="grid_12">
+        <img src="/images/page2_img1.jpg" alt="" class="fleft alpha" style="max-width: 36%">
+        <h2 style="padding-top: 30px">NOS TARIFS</h2>
+        <div class="description-home">
+            <p><strong>Pole is Art</strong> vous offre de différentes solutions d'abonnement.</p>
+            <p>Tous nos abonnements sont valides <strong>pendant 3 mois</strong><br />à partir de la date de validation et donnent accès à tous nos cours.</p>
+            <p>Rendez-vous dans votre <a href="#"><strong>Zone Membre</strong></a> pour souscrire un abonnement.</p>
+            <p>Choisissez la formule qui vous convient le plus !</p>
+        </div>
+    </div>
+    <div class="grid_12" style="padding-left: 5%">
+        <h3>NOS ABONNEMENTS</h3>
+        @for (int i = 0; i < Model.Tarifs.Count; i++)
+        {
+            <div class="grid_3 alpha" style="padding-left: 5%">
+                <div class="block-1">
+                    <h4 class="color1">@Model.Tarifs[i].NombreCredits cours</h4>
+                    <br>
+                    <ul>
+                        <li class="instruction">Vous pouvez vous inscrire à <span class="highlight">@Model.Tarifs[i].NombreCredits cours</span> en total</li>
+                        <li class="instruction"><span class="highlight">Prix par cours</span> : @Model.Tarifs[i].PrixParCours euros</li>
+                        <li class="instruction"><span class="highlight">Montant de votre abonnement</span> : @Model.Tarifs[i].Montant euros</li>
+                    </ul>
+                    <a href="/Home/Cours" class="link-1"></a>
+                </div>
+            </div>
+        }
+
+        <div class="clear"></div>
+    </div>
+
+</div>
