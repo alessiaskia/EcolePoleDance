@@ -11,6 +11,7 @@ namespace EcolePoleDance.Models
         #region Fields
         private int _idProf;
         private string _prenom, _infoProf, _photo;
+        private string _coursDonnees;
   
        
         #endregion
@@ -65,6 +66,19 @@ namespace EcolePoleDance.Models
             set
             {
                 _photo = value;
+            }
+        }
+
+        public string CoursDonnees
+        {
+            get
+            {
+                return _coursDonnees;
+            }
+
+            set
+            {
+                _coursDonnees = value;
             }
         }
 

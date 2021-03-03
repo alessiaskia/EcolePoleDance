@@ -29,6 +29,13 @@ namespace EcolePoleDance.Repositories
         #region Professeurs
         public List<ProfModel> GetAllProfs()
         {
+            List<CoursEntity> coursDesProfs = ((CoursRepository)_coursRepo).GetFromProf(1);
+            string tousLesCoursDunProf = "";
+            foreach (CoursEntity item in coursDesProfs)
+            {
+                tousLesCoursDunProf += item.NomCours;
+            }
+
             return _profRepo.Get()
                 .Select(p =>
                 new ProfModel()
@@ -36,7 +43,8 @@ namespace EcolePoleDance.Repositories
                     IdProf = p.IdProf,
                     Prenom = p.Prenom,
                     InfoProf = p.InfoProf,
-                    Photo = p.Photo
+                    Photo = p.Photo,
+                    CoursDonnees = p.toutLesCoursDunProf
                 }
                 ).ToList();
         }
@@ -58,6 +66,7 @@ namespace EcolePoleDance.Repositories
                 }
                 ).ToList();
         }
+
         #endregion
 
         #region Abonnements
