@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tools;
 
 namespace EcolePoleDance.Repositories
 {
@@ -86,7 +87,7 @@ namespace EcolePoleDance.Repositories
         #endregion
 
         #region Inscription
-        public bool CreateUser(ClientModel cm)
+        public bool CreateClient(ClientModel cm)
         {
             ClientEntity clientEntity = new ClientEntity()
             {
@@ -103,6 +104,44 @@ namespace EcolePoleDance.Repositories
 
         #region Ecole
         //still don't know what I need here
+        #endregion
+
+        #region Account
+
+        public bool CreateUser(ClientModel um)
+        {
+           ClientEntity userEntity = new ClientEntity()
+            {
+                Prenom = um.Prenom,
+                Nom = um.Nom,
+                Email = um.Email,
+                Password = um.Password
+            };
+
+            return _clientRepo.Insert(userEntity);
+        }
+
+        public ClientModel UserAuth(LoginModel lm)
+        {
+            ClientEntity ce = ((ClientRepository)_clientRepo).GetFromLogin(lm.Email);
+            if (ce == null) return null;
+            SecurityHelper sh = new SecurityHelper();
+            if (sh.VerifyHash(lm.Password, ce.Password, ce.Salt))
+            {
+                return new ClientModel()
+                {
+                    IdClient = ce.IdClient,
+                    Prenom = ce.Prenom,
+                    Nom = ce.Nom,
+                    Email = ce.Nom
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         #endregion
     }
 }

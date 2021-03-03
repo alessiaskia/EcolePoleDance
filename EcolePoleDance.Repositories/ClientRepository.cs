@@ -20,6 +20,11 @@ namespace EcolePoleDance.Repositories
             throw new NotImplementedException();
         }
 
+        public bool Update(ClientEntity toUpdate)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<ClientEntity> Get()
         {
             return base.Get("Select * from Client");
@@ -30,6 +35,7 @@ namespace EcolePoleDance.Repositories
             return base.GetOne(PK, "Select * from Client where IdClient=@id");
         }
 
+        //inscription nouvel utilisateur
         public bool Insert(ClientEntity toInsert)
         {
             SecurityHelper securityHelper = new SecurityHelper();
@@ -52,9 +58,12 @@ namespace EcolePoleDance.Repositories
             return base.Insert(toInsert, requete);
         }
 
-        public bool Update(ClientEntity toUpdate)
+        //login
+        public ClientEntity GetFromLogin(string login)
         {
-            throw new NotImplementedException();
+            Dictionary<string, object> p = new Dictionary<string, object>();
+            p.Add("login", login);
+            return base.Get("Select * from [Client] where Email=@email", p).FirstOrDefault();
         }
     }
 }

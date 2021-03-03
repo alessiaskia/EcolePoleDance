@@ -57,7 +57,7 @@ namespace EcolePoleDance.Web.Controllers
             if (ModelState.IsValid) //validation coté serveur vs. annotations
             {
                 DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
-                if (ctx.CreateUser(form))
+                if (ctx.CreateClient(form))
                 {
                     ViewBag.SuccessMessage = "Votre demande d'inscription a bien été envoyée";
                     sendEmail(form);
