@@ -28,28 +28,51 @@ namespace EcolePoleDance.Repositories
         }
 
         #region Professeurs
-        public List<ProfModel> GetAllProfs()
+        //public List<ProfModel> GetAllProfs()
+        //{
+        //    List<CoursEntity> coursDesProfs = ((CoursRepository)_coursRepo).GetFromProf(1);
+        //    string tousLesCoursDunProf = "";
+        //    foreach (CoursEntity item in coursDesProfs)
+        //    {
+        //        tousLesCoursDunProf += item.NomCours;
+        //    }
+
+        //    return _profRepo.Get()
+        //        .Select(p =>
+        //        new ProfModel()
+        //        {
+        //            IdProf = p.IdProf,
+        //            Prenom = p.Prenom,
+        //            InfoProf = p.InfoProf,
+        //            Photo = p.Photo,
+        //            CoursDonnees = p.toutLesCoursDunProf
+        //        }
+        //        ).ToList();
+        //}
+
+        public List<ProfModel> GetProfs()
         {
-            List<CoursEntity> coursDesProfs = ((CoursRepository)_coursRepo).GetFromProf(1);
-            string tousLesCoursDunProf = "";
-            foreach (CoursEntity item in coursDesProfs)
+            List<ProfEntity> listProfs = _profRepo.Get();
+
+            List<ProfModel> allProfs = new List<ProfModel>();
+            foreach (ProfEntity item in listProfs)
             {
-                tousLesCoursDunProf += item.NomCours;
-            }
-
-            return _profRepo.Get()
-                .Select(p =>
-                new ProfModel()
+                ProfModel p = new ProfModel
                 {
-                    IdProf = p.IdProf,
-                    Prenom = p.Prenom,
-                    InfoProf = p.InfoProf,
-                    Photo = p.Photo,
-                    CoursDonnees = p.toutLesCoursDunProf
-                }
-                ).ToList();
-        }
+                    IdProf = item.IdProf,
+                    Prenom = item.Prenom,
+                    InfoProf = item.InfoProf,
+                    Photo = item.Photo
+                };
 
+                List<CoursEntity> coursDesProfs = ((CoursRepository)_coursRepo).GetFromProf(p.IdProf);
+                foreach (CoursEntity truc in coursDesProfs)
+                {
+                    p.CoursDonnees += truc.NomCours + "-";
+                }
+            }
+            return allProfs;
+        }
         #endregion
 
         #region Cours
@@ -110,7 +133,7 @@ namespace EcolePoleDance.Repositories
 
         public bool CreateUser(ClientModel um)
         {
-           ClientEntity userEntity = new ClientEntity()
+            ClientEntity userEntity = new ClientEntity()
             {
                 Prenom = um.Prenom,
                 Nom = um.Nom,

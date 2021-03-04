@@ -17,7 +17,7 @@ namespace EcolePoleDance.Web.Models
 
         public EquipeViewModel()
         {
-            Equipe = ctx.GetAllProfs();
+            Equipe = ctx.GetProfs();
         }
 
         #region Props

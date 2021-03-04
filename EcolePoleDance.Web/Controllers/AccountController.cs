@@ -44,7 +44,7 @@ namespace EcolePoleDance.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                   ClientModel cm = ctx.UserAuth(lm);
+                    ClientModel cm = ctx.UserAuth(lm);
                     if (cm == null)
                     {
                         ViewBag.Error = "Erreur Login/Password";
@@ -68,3 +68,4 @@ namespace EcolePoleDance.Web.Controllers
             }
         }
     }
+}
