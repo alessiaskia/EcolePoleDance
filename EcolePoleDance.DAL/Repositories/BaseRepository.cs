@@ -302,7 +302,7 @@ namespace EcolePoleDance.DAL.Repositories
                 }
                 catch (IndexOutOfRangeException Iex)
                 {
-                    Debug.WriteLine(Iex.Message); 
+                    Debug.WriteLine(Iex.Message);
                 }
             }
             return retour;

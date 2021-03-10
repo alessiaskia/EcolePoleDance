@@ -64,7 +64,8 @@ namespace EcolePoleDance.Entities
             {
                 _photo = value;
             }
-        } 
+        }
+
         #endregion
     }
 }

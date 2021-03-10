@@ -33,9 +33,12 @@ namespace EcolePoleDance.Repositories
         public List<CoursEntity> GetFromProf(int idProf)
         {
             string requete = @"SELECT Cours.NomCours
-                               FROM  Prof INNER JOIN
+                               FROM  Prof LEFT JOIN
                                Cours ON Prof.IdProf = Cours.IdProf
                                WHERE Prof.IdProf=" + idProf;
+           
+            //string requete = "Select * from V_Profs";
+
             return base.Get(requete);
         }
 

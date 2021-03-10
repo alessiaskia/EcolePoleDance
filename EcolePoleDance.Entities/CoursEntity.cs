@@ -10,7 +10,8 @@ namespace EcolePoleDance.Entities
     {
         #region Fields
         private int _idCours, _maxParticipants;
-        private string _nomCours, _description, _image;
+        private string _nomCours, _description, _image, _prenomProf;
+
         #endregion
 
         #region Props
@@ -77,7 +78,20 @@ namespace EcolePoleDance.Entities
             {
                 _image = value;
             }
-        } 
+        }
+
+        public string PrenomProf
+        {
+            get
+            {
+                return _prenomProf;
+            }
+
+            set
+            {
+                _prenomProf = value;
+            }
+        }
         #endregion
     }
 }

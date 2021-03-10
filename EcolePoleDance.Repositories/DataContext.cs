@@ -65,11 +65,15 @@ namespace EcolePoleDance.Repositories
                     Photo = item.Photo
                 };
 
+                allProfs.Add(p);
                 List<CoursEntity> coursDesProfs = ((CoursRepository)_coursRepo).GetFromProf(p.IdProf);
+                string listeDeCours = "";
                 foreach (CoursEntity truc in coursDesProfs)
                 {
-                    p.CoursDonnees += truc.NomCours + "-";
+                    listeDeCours += " " + truc.NomCours + ",";
                 }
+                    listeDeCours = listeDeCours.Substring(0, listeDeCours.Length - 1);
+                    p.CoursDonnees = listeDeCours;
             }
             return allProfs;
         }
