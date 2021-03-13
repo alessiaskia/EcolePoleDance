@@ -148,7 +148,7 @@ namespace EcolePoleDance.Repositories
             return _clientRepo.Insert(userEntity);
         }
 
-        public ClientModel UserAuth(LoginModel lm)
+        public ClientModel ClientAuth(LoginModel lm)
         {
             ClientEntity ce = ((ClientRepository)_clientRepo).GetFromLogin(lm.Email);
             if (ce == null) return null;

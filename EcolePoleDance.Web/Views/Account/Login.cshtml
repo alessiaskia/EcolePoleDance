@@ -1,0 +1,58 @@
+﻿@model EcolePoleDance.Models.LoginRegisterModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@section ContactCSS
+    {
+    @Styles.Render("~/Content/contact")
+}
+
+@section ContactScript
+{
+    @Scripts.Render("~/bundles/additionalForContacts")
+}
+
+<script>
+    $(window).load(function () {
+        $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+</script>
+
+<!--=====================
+          Content
+======================-->
+<section id="content">
+    <div class="ic">More Website Templates at TemplateMonster.com - October 06, 2014!</div>
+    <div class="container_12">
+        <div class="grid_5">
+            <h2 class="color1 inset__1">Login</h2>
+        </div>
+        <div class="grid_6 prefix_1">
+            <p class="instruction">Accedez à votre zone privée pour réserver vos cours et gerer vos abonnements</p>
+            <form id="contact-form" action="/Home/Login" method="post">
+                @Html.AntiForgeryToken()
+                <div class="contact-form-loader"></div>
+                <label class="email">
+                    <input type="text" name="Email" placeholder="-- E-mail" required />
+                    @Html.ValidationMessageFor(model => model.LoginModel.Email, "", new { @class = "text-danger" })
+                </label>
+                <label class="password">
+                    <input type="password" name="Password" placeholder="-- Mot de passe" required />
+                    @Html.ValidationMessageFor(model => model.LoginModel.Password, "", new { @class = "text-danger" })
+                </label>
+            </form>
+            <div class="ta__center">
+                <button class="link-1" data-type="submit">Connectez-vous</button>
+                @ViewBag.Error
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</section>
+
+@*temporarily disabled*@
+@*<div>
+        @Html.ActionLink("Retour", "/Home")
+    </div>*@

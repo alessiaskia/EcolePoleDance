@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace NetFlask.Infra
+namespace EcolePoleDance.Web.Infra
 {
     public static class SessionUtils
     {

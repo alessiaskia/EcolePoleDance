@@ -84,7 +84,7 @@
         line-height: 20px;
         font-size: 18px;
         font-family: 'Open Sans',sans-serif;
-       /* padding: 6px 20px 5px;*/
+        /* padding: 6px 20px 5px;*/
         font-weight: 300;
         outline: 0;
         color: #636262;
@@ -404,7 +404,6 @@ button.close {
     box-sizing: border-box;
     margin: 0;
     background-color: #fdfdfd;
-   
 }
 
 @media only screen and (max-width:1199px) {
