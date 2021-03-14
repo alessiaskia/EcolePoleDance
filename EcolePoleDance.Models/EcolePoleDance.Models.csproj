@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbonnementModel.cs" />
+    <Compile Include="ClientAbonnementModel.cs" />
     <Compile Include="CoursModel.cs" />
     <Compile Include="ClientModel.cs" />
     <Compile Include="EcoleModel.cs" />

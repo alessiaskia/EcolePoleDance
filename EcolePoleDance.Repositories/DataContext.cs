@@ -17,6 +17,7 @@ namespace EcolePoleDance.Repositories
         IConcreteRepository<AbonnementEntity> _abonnementRepo;
         IConcreteRepository<ClientEntity> _clientRepo;
         IConcreteRepository<EcoleEntity> _ecoleRepo;
+        IConcreteRepository<ClientAbonnementEntity> _instanceAbonnementRepo;
 
         public DataContext(string connectionString)
         {
@@ -25,31 +26,11 @@ namespace EcolePoleDance.Repositories
             _abonnementRepo = new AbonnementRepository(connectionString);
             _clientRepo = new ClientRepository(connectionString);
             _ecoleRepo = new EcoleRepository(connectionString);
+            _instanceAbonnementRepo = new ClientAbonnementRepository(connectionString);
         }
 
         #region Professeurs
-        //public List<ProfModel> GetAllProfs()
-        //{
-        //    List<CoursEntity> coursDesProfs = ((CoursRepository)_coursRepo).GetFromProf(1);
-        //    string tousLesCoursDunProf = "";
-        //    foreach (CoursEntity item in coursDesProfs)
-        //    {
-        //        tousLesCoursDunProf += item.NomCours;
-        //    }
-
-        //    return _profRepo.Get()
-        //        .Select(p =>
-        //        new ProfModel()
-        //        {
-        //            IdProf = p.IdProf,
-        //            Prenom = p.Prenom,
-        //            InfoProf = p.InfoProf,
-        //            Photo = p.Photo,
-        //            CoursDonnees = p.toutLesCoursDunProf
-        //        }
-        //        ).ToList();
-        //}
-
+       
         public List<ProfModel> GetProfs()
         {
             List<ProfEntity> listProfs = _profRepo.Get();
@@ -98,6 +79,8 @@ namespace EcolePoleDance.Repositories
         #endregion
 
         #region Abonnements
+
+        //show all abonnements
         public List<AbonnementModel> GetAllAbonnements()
         {
             return _abonnementRepo.Get()
@@ -110,6 +93,24 @@ namespace EcolePoleDance.Repositories
                     PrixParCours = a.PrixParCours,
                 }
                 ).ToList();
+        }
+
+        //get chosen abonnement
+        //to insert into table ClientAbonnement
+
+        public bool CreateInstanceAbonnement(ClientAbonnementModel cam)
+        {
+            ClientAbonnementEntity instanceAbonnement = new ClientAbonnementEntity()
+            {
+                IdAbonnement = cam.IdAbonnement,
+                IdClient = cam.IdClient,
+                IdEcole = cam.IdEcole,
+                CreditsRestants = cam.CreditsRestants,
+                DateValidation = cam.DateValidation,
+                DateEcheanche = cam.DateEcheanche,
+                Annule = false
+            };
+            return _instanceAbonnementRepo.Insert(instanceAbonnement);
         }
         #endregion
 
@@ -133,20 +134,7 @@ namespace EcolePoleDance.Repositories
         #endregion
 
         #region Account
-
-        public bool CreateUser(ClientModel um)
-        {
-            ClientEntity userEntity = new ClientEntity()
-            {
-                Prenom = um.Prenom,
-                Nom = um.Nom,
-                Email = um.Email,
-                Password = um.Password
-            };
-
-            return _clientRepo.Insert(userEntity);
-        }
-
+        //user authentification
         public ClientModel ClientAuth(LoginModel lm)
         {
             ClientEntity ce = ((ClientRepository)_clientRepo).GetFromLogin(lm.Email);
@@ -167,7 +155,6 @@ namespace EcolePoleDance.Repositories
                 return null;
             }
         }
-
         #endregion
     }
 }

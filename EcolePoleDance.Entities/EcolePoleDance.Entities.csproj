@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbonnementEntity.cs" />
+    <Compile Include="ClientAbonnementEntity.cs" />
     <Compile Include="ClientEntity.cs" />
     <Compile Include="CoursEntity.cs" />
     <Compile Include="EcoleEntity.cs" />

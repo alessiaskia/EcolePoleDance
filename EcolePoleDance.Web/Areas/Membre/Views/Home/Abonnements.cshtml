@@ -4,8 +4,8 @@
     Layout = "~/Areas/Membre/Views/Shared/_MembreLayout.cshtml";
 }
 <section id="content" class="color1-background">
-    <h2 class="color1 inset__1">Mes Abonnements</h2>
     <div class="container_12">
+    <h2 class="color1 inset__1">Mes Abonnements</h2>
         <div class="grid_5">
             <h4>Nouvel abonnement</h4>
             <br /><br />
@@ -23,11 +23,24 @@
             <p class="instruction">
                 Les administrateurs de l'école valideront votre inscription dès que le montant de l'abonnement sera reglé.
             </p>
+            @if (ViewBag.SuccessMessage != null)
+            {
+                @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
+            }
 
+            @if (ViewBag.ErrorMessage != null)
+            {
+                @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
+
+            @if (ViewBag.ErrorNotSelected != null)
+            {
+                @:<div class="alert alert-danger">@ViewBag.ErrorNotSelected</div>
+            }
             <form id="contact-form" method="post">
                 @Html.AntiForgeryToken()
                 <label for="abonnements">
-                    <select name="IdAbonnement" id="listeAbonnements">
+                    <select name="IdAbonnement" id="listeAbonnements" required>
                         <option disabled selected> -- sélectionnez une option </option>
                         @foreach (var ab in Model.Tarifs)
                         {
@@ -42,7 +55,25 @@
         </div>
 
         <div class="grid_6 prefix_1">
-            <h4 class="color1 inset__1"></h4>
+
+            <h4>Mon abonnement actuel</h4>
+            <div class="block-1">
+                <p>Date de validation: (à récuperer REQUETE)</p>
+                <p>Date d'échéance: <strong>(à récuperer REQUETE)</strong></p>
+                <p>Nombre de Credits total: (à récuperer REQUETE)</p>
+                <p>Nombre de crédits restants: <strong>(à récuperer REQUETE)</strong></p>
+            </div>
+        </div>
+
+        <div class="grid_6 prefix_1">
+
+            <h4>Mes abonnements passés</h4>
+            <div class="block-1">
+                <ul>
+                    @*foreach list*@
+                    <li>Date d'échéance: <strong>(à récuperer REQUETE)</strong></li>
+                </ul>
+            </div>
         </div>
         <div class="clear"></div>
     </div>
