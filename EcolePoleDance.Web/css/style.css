@@ -461,6 +461,10 @@ h1 span {
 .black {
 	color:#000
 }
+
+.color1-background {
+	background-color: #f0e1ef;
+}
 .map {
 	overflow:hidden;
 	padding-top:7px

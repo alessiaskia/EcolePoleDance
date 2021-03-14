@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Zone Membre - Cours";
+    Layout = "~/Areas/Membre/Views/Shared/_MembreLayout.cshtml";
+}
+<section id="content" class="color1-background">
+    <h2 class="color1 inset__1">Mes Cours</h2>
+    <div class="container_12">
+        <div class="grid_5">
+            <h4>Réserver un cours</h4>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Aenean commodo ligula eget dolor. Aenean massa.
+            Cum sociis natoque penatibus et magnis dis parturient montes,
+            nascetur ridiculus mus. Donec quam felis, ultricies nec,
+            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+            Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+            Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+            Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+            Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
+            Aenean imperdiet. Etiam ultricies nisi vel augue.
+            Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+
+
+            <form id="contact-form" method="post">
+                @Html.AntiForgeryToken()
+                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+                Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
+                Aenean imperdiet. Etiam ultricies nisi vel augue.
+                @*<label for="abonnements">
+                        <select name="idAbonnement" id="listeAbonnements">
+                            <option disabled selected> -- sélectionnez une option </option>
+                            @foreach (var ab in Model.Tarifs)
+                            {
+                                <option value="@ab.NombreCredits" id="@ab.IdAbonnement" name="TypeAbonnement">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
+                            }
+                        </select>
+                    </label>
+                    <div class="ta__left">
+                        <button class="link-1" data-type="submit">Valider</button>
+                    </div>*@
+            </form>
+        </div>
+
+        <div class="grid_6 prefix_1">
+            <h4 class="color1 inset__1">Mes réservations de cours</h4>
+            <ul>
+                <li>
+                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                </li>
+                <li>
+                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                </li>
+                <li>
+                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                </li>
+                <li>
+                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</section>

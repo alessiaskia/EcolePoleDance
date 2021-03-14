@@ -1,12 +1,36 @@
 ﻿@model EcolePoleDance.Models.ClientModel
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Zone Membre";
+    Layout = "~/Areas/Membre/Views/Shared/_MembreLayout.cshtml";
 }
 
-<h2>Zone Membre</h2>
+<section id="content" class="color1-background">
+    <div class="container_12">
+        <h2 class="color1 inset__1">Votre Compte</h2>
+        <h3>Bienvenu.e @Model.Prenom @Model.Nom</h3>
+        <br /><br />
+        <div class="grid_5">
 
-<h3>Bienvenu.e @Model.Prenom</h3>
+            <h4>Votre abonnement actuel</h4>
+            <div class="block-1">
+                <p>Date de validation: (à récuperer REQUETE)</p>
+                <p>Date d'échéance: <strong>(à récuperer REQUETE)</strong></p>
+                <p>Nombre de Credits total: (à récuperer REQUETE)</p>
+                <p>Nombre de crédits restants: <strong>(à récuperer REQUETE)</strong></p>
+            </div>
+        </div>
 
-<a href="~/Home/Index" class="btn btn-default">Retour Zone</a>
-<a href="~/Membre/Home/Logout" class="btn btn-danger">Logout</a>
+        <div class="grid_6 prefix_1">
+
+            <h4>Vos abonnements passés</h4>
+            <div class="block-1">
+                <ul>
+                    @*foreach list*@
+                    <li>Date d'échéance: <strong>(à récuperer REQUETE)</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</section>

@@ -231,6 +231,9 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Membre\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Membre\Views\Shared\_MembreLayout.cshtml" />
+    <Content Include="Areas\Membre\Views\Home\Abonnements.cshtml" />
+    <Content Include="Areas\Membre\Views\Home\SessionsCours.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -265,7 +268,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Membre\Data\" />
-    <Folder Include="Areas\Membre\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

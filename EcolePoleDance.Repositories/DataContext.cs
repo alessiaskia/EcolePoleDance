@@ -72,8 +72,8 @@ namespace EcolePoleDance.Repositories
                 {
                     listeDeCours += " " + truc.NomCours + ",";
                 }
-                    listeDeCours = listeDeCours.Substring(0, listeDeCours.Length - 1);
-                    p.CoursDonnees = listeDeCours;
+                listeDeCours = listeDeCours.Substring(0, listeDeCours.Length - 1);
+                p.CoursDonnees = listeDeCours;
             }
             return allProfs;
         }
@@ -122,7 +122,6 @@ namespace EcolePoleDance.Repositories
                 Nom = cm.Nom,
                 Email = cm.Email,
                 Password = cm.Password,
-                ConfirmPassword = cm.ConfirmPassword
             };
 
             return _clientRepo.Insert(clientEntity);

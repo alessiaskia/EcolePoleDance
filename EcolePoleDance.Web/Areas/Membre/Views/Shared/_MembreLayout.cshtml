@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/base")
-   
+
 
     <script>
         $(window).load(function () {
@@ -57,28 +57,17 @@
             </div>
             <section id="stuck_container">
                 <!--==============================
-                        Stuck menu
-            =================================-->
+                            Stuck menu
+                =================================-->
                 <div class="container_12">
                     <div class="grid_12">
                         <div class="navigation ">
                             <nav>
                                 <ul class="sf-menu">
-                                    <li><a class="@ViewBag.Home" href="/Home/Index">Home</a></li>
-                                    <li><a class="@ViewBag.Cours" href="/Home/Cours">Cours</a></li>
-                                    <li><a class="@ViewBag.Equipe" href="/Home/Equipe">Equipe</a></li>
-                                    <li><a class="@ViewBag.Tarifs" href="/Home/Tarifs">Tarifs</a></li>
-                                    <li><a class="@ViewBag.Inscription" href="/Home/Inscription">Inscription</a></li>
-                                    @*<li><a class="@ViewBag.Login" href="/Account/Login">Login</a></li>*@
-                                    @if (EcolePoleDance.Web.Infra.SessionUtils.IsLogged)
-                                    {
-                                        <li><a class="@ViewBag.Logout" href="/Account/Logout">Logout</a></li>
-                                    }
-                                    else
-                                    {
-                                        <li><a class="@ViewBag.Login" href="/Account/Login">Login</a></li>
-                                    }
-                                    <li><a class="@ViewBag.ZoneMembre" title="Zone Membre" href="/Membre/Home/Index"></a></li>
+                                    <li><a class="@ViewBag.Index" href="/Membre/Home/Index">Home</a></li>
+                                    <li><a class="@ViewBag.Abonnements" href="/Membre/Home/Abonnements">Mes abonnements</a></li>
+                                    <li><a class="@ViewBag.Cours" href="/Membre/Home/SessionsCours">Mes cours</a></li>
+                                    <li><a class="@ViewBag.Logout" href="/Account/Logout">Logout</a></li>
                                 </ul>
                             </nav>
                             <div class="clear"></div>
@@ -115,8 +104,8 @@
             </div>
         </div>
         <!--==============================
-                  footer
-    =================================-->
+                      footer
+        =================================-->
     </div>
     <footer id="footer">
         <div class="container_12">
@@ -127,7 +116,7 @@
         </div>
     </footer>
     <a href="#" id="toTop" class="fa fa-angle-up"></a>
-    
+
     @RenderSection("ContactCSS", false)
     @RenderSection("IndexCSS", false)
     @RenderSection("IndexScript", false)

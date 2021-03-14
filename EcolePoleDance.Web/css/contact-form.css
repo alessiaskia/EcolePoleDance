@@ -78,7 +78,7 @@
         display: none
     }
 
-    #contact-form input[type=text], #contact-form input[type=password] {
+    #contact-form input[type=text], #contact-form input[type=password], select, option {
         width: 100%;
         border-radius: 4px;
         line-height: 20px;

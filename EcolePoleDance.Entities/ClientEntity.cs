@@ -10,7 +10,7 @@ namespace EcolePoleDance.Entities
     {
         #region Fields
         private int _idClient;
-        private string _prenom, _nom, _email, _password, _confirmPassword, _salt;
+        private string _prenom, _nom, _email, _password, _salt;
         #endregion
 
         #region Props
@@ -89,19 +89,6 @@ namespace EcolePoleDance.Entities
             set
             {
                 _salt = value;
-            }
-        }
-
-        public string ConfirmPassword
-        {
-            get
-            {
-                return _confirmPassword;
-            }
-
-            set
-            {
-                _confirmPassword = value;
             }
         }
         #endregion

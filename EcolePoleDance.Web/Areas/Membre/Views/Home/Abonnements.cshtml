@@ -1,0 +1,53 @@
+﻿@model EcolePoleDance.Web.Models.TarifsViewModel
+@{
+    ViewBag.Title = "Zone Membre - Abonnements";
+    Layout = "~/Areas/Membre/Views/Shared/_MembreLayout.cshtml";
+}
+<section id="content" class="color1-background">
+    <h2 class="color1 inset__1">Mes Abonnements</h2>
+    <div class="container_12">
+        <div class="grid_5">
+            <h4>Nouvel abonnement</h4>
+            <br /><br />
+            <p class="instruction">Tous nos abonnements ont la durée de <span class="highlight">3 mois.</span></p>
+            <p class="instruction"><span class="highlight">Choisissez l'abonnement</span> que vous voulez souscrire et envoyez.</p>
+            <p class="instruction"><span class="highlight">Payez par virement bancaire</span>. Voici les coordonnées :</p>
+
+            <p>
+                Pole Is Art <br>
+                Rue du T-Rex, 39 <br>
+                1040 Bruxelles <br>
+                IBAN: BE22 4444 5555 6666 <br>
+            </p>
+
+            <p class="instruction">
+                Les administrateurs de l'école valideront votre inscription dès que le montant de l'abonnement sera reglé.
+            </p>
+
+            <form id="contact-form" method="post">
+                @Html.AntiForgeryToken()
+                <label for="abonnements">
+                    <select name="IdAbonnement" id="listeAbonnements">
+                        <option disabled selected> -- sélectionnez une option </option>
+                        @foreach (var ab in Model.Tarifs)
+                        {
+                            <option value="@ab.NombreCredits" id="@ab.IdAbonnement" name="TypeAbonnement">@ab.NombreCredits cours - @ab.Montant € (@ab.PrixParCours € / cours)</option>
+                        }
+                    </select>
+                </label>
+                <div class="ta__left">
+                    <button class="link-1" data-type="submit">Envoyer</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="grid_6 prefix_1">
+            <h4 class="color1 inset__1"></h4>
+        </div>
+        <div class="clear"></div>
+    </div>
+</section>
+
+
+
+
