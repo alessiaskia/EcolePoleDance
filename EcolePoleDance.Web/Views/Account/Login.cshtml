@@ -31,21 +31,32 @@
         </div>
         <div class="grid_6 prefix_1">
             <p class="instruction">Accedez à votre zone privée pour réserver vos cours et gerer vos abonnements</p>
-            <form id="contact-form" action="/Home/Login" method="post">
+            <p>Pas encore membre de Pole is Art ? <a href="/Home/Inscription" class="color1">Enregistrez-vous</a></p>
+            <form id="contact-form" action="/Account/Login" method="post">
                 @Html.AntiForgeryToken()
                 <div class="contact-form-loader"></div>
                 <label class="email">
                     <input type="text" name="Email" placeholder="-- E-mail" required />
-                    @Html.ValidationMessageFor(model => model.LoginModel.Email, "", new { @class = "text-danger" })
+                    <span class="empty-message">*This field is required.</span>
+                    <span class="error-message">*This is not a valid name.</span>
                 </label>
                 <label class="password">
                     <input type="password" name="Password" placeholder="-- Mot de passe" required />
-                    @Html.ValidationMessageFor(model => model.LoginModel.Password, "", new { @class = "text-danger" })
+                    <span class="empty-message">*This field is required.</span>
+                    <span class="error-message">*This is not a valid name.</span>
                 </label>
             </form>
             <div class="ta__center">
                 <button class="link-1" data-type="submit">Connectez-vous</button>
-                @ViewBag.Error
+                @if (ViewBag.ErrorNotExistent != null)
+                {
+                    @:<div class="alert alert-success">@ViewBag.ErrorNotExistent</div>
+                }
+
+                @if (ViewBag.ErrorNotValid != null)
+                {
+                    @:<div class="alert alert-danger">@ViewBag.ErrorNotValid</div>
+                }
             </div>
         </div>
         <div class="clear"></div>

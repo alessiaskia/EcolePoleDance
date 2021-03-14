@@ -43,7 +43,7 @@ namespace EcolePoleDance.Web.Controllers
                 ClientModel cm = ctx.ClientAuth(lm);
                 if (cm == null)
                 {
-                    ViewBag.Error = "Erreur Login/Password";
+                    ViewBag.ErrorNotExistent = "Erreur Login/Password";
                     return View();
                 }
                 else if (lm.Email == "poleisart@gmail.org" && lm.Password == "test1234")
@@ -60,6 +60,7 @@ namespace EcolePoleDance.Web.Controllers
             }
             else
             {
+                ViewBag.ErrorNotValid = "Formulaire error : vérifiez les données insérées et réessayez";
                 return View();
             }
 
