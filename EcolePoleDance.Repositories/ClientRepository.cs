@@ -62,7 +62,7 @@ namespace EcolePoleDance.Repositories
         public ClientEntity GetFromLogin(string login)
         {
             Dictionary<string, object> p = new Dictionary<string, object>();
-            p.Add("login", login);
+            p.Add("email", login);
             return base.Get("Select * from [Client] where Email=@email", p).FirstOrDefault();
         }
     }

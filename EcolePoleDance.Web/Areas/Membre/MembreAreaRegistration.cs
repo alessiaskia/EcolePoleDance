@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace EcolePoleDance.Web.Areas.Member
+namespace EcolePoleDance.Web.Areas.Membre
 {
-    public class MemberAreaRegistration : AreaRegistration 
+    public class MembreAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "Member";
+                return "Membre";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Member_default",
-                "Member/{controller}/{action}/{id}",
+                "Membre_default",
+                "Membre/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

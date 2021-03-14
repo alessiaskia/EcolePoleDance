@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace EcolePoleDance.Web.Areas.Member.Controllers
+namespace EcolePoleDance.Web.Areas.Membre.Controllers
 {
     public class HomeController : Controller
     {

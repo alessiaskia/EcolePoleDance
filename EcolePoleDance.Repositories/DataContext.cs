@@ -160,7 +160,7 @@ namespace EcolePoleDance.Repositories
                     IdClient = ce.IdClient,
                     Prenom = ce.Prenom,
                     Nom = ce.Nom,
-                    Email = ce.Nom
+                    Email = ce.Email
                 };
             }
             else

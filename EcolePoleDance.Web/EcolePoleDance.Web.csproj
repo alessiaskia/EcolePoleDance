@@ -125,8 +125,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Member\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
+    <Compile Include="Areas\Membre\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Membre\MembreAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -227,9 +227,9 @@
     <Content Include="less\style.less" />
     <Content Include="less\superfish.less" />
     <Content Include="less\variables.less" />
-    <Content Include="Areas\Member\Views\web.config" />
+    <Content Include="Areas\Membre\Views\web.config" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Member\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Membre\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -264,8 +264,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Areas\Member\Data\" />
-    <Folder Include="Areas\Member\Views\Shared\" />
+    <Folder Include="Areas\Membre\Data\" />
+    <Folder Include="Areas\Membre\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

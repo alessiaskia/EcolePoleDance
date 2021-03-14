@@ -45,7 +45,6 @@
                     <span class="empty-message">*This field is required.</span>
                     <span class="error-message">*This is not a valid name.</span>
                 </label>
-            </form>
             <div class="ta__center">
                 <button class="link-1" data-type="submit">Connectez-vous</button>
                 @if (ViewBag.ErrorNotExistent != null)
@@ -58,6 +57,7 @@
                     @:<div class="alert alert-danger">@ViewBag.ErrorNotValid</div>
                 }
             </div>
+            </form>
         </div>
         <div class="clear"></div>
     </div>

@@ -69,7 +69,16 @@
                                     <li><a class="@ViewBag.Equipe" href="/Home/Equipe">Equipe</a></li>
                                     <li><a class="@ViewBag.Tarifs" href="/Home/Tarifs">Tarifs</a></li>
                                     <li><a class="@ViewBag.Inscription" href="/Home/Inscription">Inscription</a></li>
-                                    <li><a class="@ViewBag.Login" href="/Account/Login">Login</a></li>
+                                    @*<li><a class="@ViewBag.Login" href="/Account/Login">Login</a></li>*@
+                                    @if (EcolePoleDance.Web.Infra.SessionUtils.IsLogged)
+                                    {
+                                        <li><a class="@ViewBag.Logout" href="/Account/Logout">Logout</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a class="@ViewBag.Login" href="/Account/Login">Login</a></li>
+                                    }
+                                    <li><a class="@ViewBag.ZoneMembre" title="Zone Membre" href="/Membre/Home/Index"></a></li>
                                 </ul>
                             </nav>
                             <div class="clear"></div>
