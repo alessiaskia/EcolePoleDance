@@ -108,7 +108,7 @@ namespace EcolePoleDance.Repositories
                 CreditsRestants = cam.CreditsRestants,
                 DateValidation = cam.DateValidation,
                 DateEcheanche = cam.DateEcheanche,
-                Annule = false
+                Annule = cam.Annule,
             };
             return _instanceAbonnementRepo.Insert(instanceAbonnement);
         }

@@ -3,7 +3,7 @@
 	[IdSession] INT NOT NULL IDENTITY,
 	[Horaire] DATETIME2 NOT NULL,
 	[Duree] TIME NOT NULL,
-	[Annule] BIT NOT NULL,
+	[Annule] BIT NOT NULL DEFAULT 0,
 	[IdEcole] INT NOT NULL,
 	[IdProf] INT NOT NULL,
 	[IdCours] INT NOT NULL,

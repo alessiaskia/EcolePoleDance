@@ -14,9 +14,13 @@ namespace EcolePoleDance.Repositories
         {
 
         }
+
+        //procedure stockée pour l'insertion d'une instance d'abonnement
         public bool Insert(ClientAbonnementEntity toInsert)
         {
-            throw new NotImplementedException();
+            string requete = $"exec InsertInstanceAbonnement";
+
+            return base.Insert(toInsert, requete);
         }
 
         public bool Delete(ClientAbonnementEntity toDelete)
