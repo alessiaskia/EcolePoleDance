@@ -15,5 +15,6 @@ CREATE PROCEDURE [dbo].[InsertInstanceAbonnement]
 AS
 BEGIN
     -- Insert statements for procedure here
-	INSERT INTO Client_Abonnement VALUES(@idClient, @idAbonnement, @idEcole, @creditsRestants, @dateValidation, @dateEcheanche, @annule)
+	INSERT INTO [Client_Abonnement] ([IdClient], [IdAbonnement], [IdEcole], [CreditsRestants], [DateValidation], [DateEcheance], [Annule])
+	VALUES(@idClient, @idAbonnement, @idEcole, @creditsRestants, @dateValidation, @dateEcheanche, @annule)
 END

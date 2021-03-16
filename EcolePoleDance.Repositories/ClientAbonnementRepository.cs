@@ -18,7 +18,14 @@ namespace EcolePoleDance.Repositories
         //procedure stockée pour l'insertion d'une instance d'abonnement
         public bool Insert(ClientAbonnementEntity toInsert)
         {
-            string requete = $"exec InsertInstanceAbonnement";
+            string requete = @"exec InsertInstanceAbonnement
+                                @idClient,
+	                            @idAbonnement,
+	                            @idEcole,
+	                            @creditsRestants,
+	                            @dateValidation,
+	                            @dateEcheanche,
+	                            @annule";
 
             return base.Insert(toInsert, requete);
         }
