@@ -15,11 +15,12 @@ namespace EcolePoleDance.Web.Models
         private List<AbonnementModel> _tarifs;
 
         private ClientAbonnementModel _instance;
+        private AbonnementModel _typeAbonnement;
 
         public TarifsViewModel()
         {
             Tarifs = ctx.GetAllAbonnements();
-            Instance = ctx.CreateInstanceAbonnement();
+            Instance = ctx.CreateInstanceAbonnement(TypeAbonnement);
         }
 
         public List<AbonnementModel> Tarifs
@@ -45,6 +46,19 @@ namespace EcolePoleDance.Web.Models
             set
             {
                 _instance = value;
+            }
+        }
+
+        public AbonnementModel TypeAbonnement
+        {
+            get
+            {
+                return _typeAbonnement;
+            }
+
+            set
+            {
+                _typeAbonnement = value;
             }
         }
     }
